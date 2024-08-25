@@ -5,13 +5,14 @@
 		<title>A BUGGY GAME</title>
 	</head>
 	<body>
-		<p id="test">testing</p>
+		<p id="test">testing testing</p>
 		<canvas id="canvas"></canvas>
-		<script src="JavaScript/renderer.js"></script>
 		<script>
-			var canvas=document.querySelector("#c");
+			document.getElementById("test").innerHTML="test test";
+			var canvas=document.querySelector("#canvas");
 			var gl=canvas.getContext("webgl");
 			document.getElementById("test").innerHTML="test";
 		</script>
+		<script src="JavaScript/renderer.js"></script>
 	</body>
 </html>
