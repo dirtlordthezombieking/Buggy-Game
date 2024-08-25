@@ -2,6 +2,10 @@ var gl;
 
 function loadShader(src)
 {
+	return;
+}
+function blah(src)
+{
 	//vertex
 	var vertex=document.createElement('script');
 	vertex.src=src+'/vertex.glsl';
