@@ -5,16 +5,18 @@
 		<title>A BUGGY GAME</title>
 	</head>
 	<body>
-		<p id="test">testing testing</p>
+		<p id="test">test info goes here</p>
 		<canvas id="canvas"></canvas>
-		<script src="JavaScript/renderer.js"></script>
+		<script src="JavaScript/utils.js"></script>
 		<script>
 			document.getElementById("test").innerHTML="test test";
 			var canvas=document.querySelector("#canvas");
 			var gl=canvas.getContext("webgl");
-			document.getElementById("test").innerHTML="test";
+			document.getElementById("test").innerHTML="test start";
+			loadJavaScript("JavaScript/renderer.js");
+			document.getElementById("test").innerHTML="test load";
 			loadShader("shaders/basic");
-			//document.getElementById("test").innerHTML="test line";
+			document.getElementById("test").innerHTML="test finish";
 		</script>
 	</body>
 </html>
