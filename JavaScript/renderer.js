@@ -5,6 +5,7 @@ function loadShader(src)
 	//vertex
 	var vertex=document.createElement('script');
 	vertex.src=src+'/vertex.glsl';
+	vertex.type='notjs';
 	document.getElementById("test").innerHTML="test test test";
 	return;
 }
