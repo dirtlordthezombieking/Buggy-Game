@@ -2,6 +2,8 @@ var gl;
 
 function loadShader(src)
 {
+	//vertex
+	var vertex=document.createElement('script');
 	document.getElementById("test").innerHTML="test test test";
 	return;
 }
