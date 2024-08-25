@@ -12,6 +12,10 @@ function loadShader(src)
 	//fragment.src=src+'/fragment.glsl';
 	//fragment.type='notjs';
 	//document.body.appendChild(fragment);
+	document.getElementById("test").innerHTML="test shader";
+	let vertex=loadScript(src+'/vertex.glsl',notjs);
+	document.getElementById("test").innerHTML="test vertex";
+	let fragment=loadScript(src+'/fragment.glsl',notjs);
 	document.getElementById("test").innerHTML="test fragment";
 	return;
 }
