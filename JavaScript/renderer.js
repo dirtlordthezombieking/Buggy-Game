@@ -9,6 +9,7 @@ function loadShader(src)
 	document.body.appendChild(vertex);
 	//fragment
 	var fragment=document.createElement('script');
+	fragment.src=src+'/fragment.glsl';
 	document.getElementById("test").innerHTML="test test test";
 	return;
 }
