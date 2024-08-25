@@ -7,6 +7,7 @@
 	<body>
 		<p id="test">testing testing</p>
 		<canvas id="canvas"></canvas>
+		<script src="JavaScript/renderer.js"></script>
 		<script>
 			document.getElementById("test").innerHTML="test test";
 			var canvas=document.querySelector("#canvas");
@@ -15,6 +16,5 @@
 			loadShader("shaders/basic");
 			document.getElementById("test").innerHTML="test line";
 		</script>
-		<script src="JavaScript/renderer.js"></script>
 	</body>
 </html>
