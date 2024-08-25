@@ -7,6 +7,8 @@ function loadShader(src)
 	vertex.src=src+'/vertex.glsl';
 	vertex.type='notjs';
 	document.body.appendChild(vertex);
+	//fragment
+	var fragment=document.createElement('script');
 	document.getElementById("test").innerHTML="test test test";
 	return;
 }
