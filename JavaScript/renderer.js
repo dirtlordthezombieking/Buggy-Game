@@ -11,19 +11,7 @@ function loadShader(src)
 	var fragment=document.createElement('script');
 	fragment.src=src+'/fragment.glsl';
 	fragment.type='notjs';
-	document.getElementById("test").innerHTML="test fragment 3";
-	return;
-}
-function blah(src)
-{
-	//vertex
-	var vertex=document.createElement('script');
-	vertex.src=src+'/vertex.glsl';
-	vertex.type='notjs';
-	document.body.appendChild(vertex);
-	//fragment
-	var fragment=document.createElement('script');
-	fragment.src=src+'/fragment.glsl';
-	fragment.type='notjs';
 	document.body.appendChild(fragment);
+	document.getElementById("test").innerHTML="test fragment 4";
+	return;
 }
