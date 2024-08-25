@@ -1,4 +1,4 @@
-var gl;
+let gl;
 
 function loadShader(src)
 {
@@ -17,5 +17,4 @@ function loadShader(src)
 	document.getElementById("test").innerHTML="test vertex";
 	let fragment=loadScript(src+'/fragment.glsl',notjs);
 	document.getElementById("test").innerHTML="test fragment";
-	return;
 }
