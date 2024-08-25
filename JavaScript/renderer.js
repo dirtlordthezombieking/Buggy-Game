@@ -2,7 +2,7 @@ var gl;
 
 function loadShader(src)
 {
-  document.getElementById("test").innerHTML="test test test";
+	document.getElementById("test").innerHTML="test test test";
 	return;
 }
 function blah(src)
