@@ -1,17 +1,17 @@
 function loadJavaScript(src)
 {
-	document.getElementById("test").innerHTML="test js1b";
-	let sript=document.createElement("script");
-	document.getElementById("test").innerHTML="test js2b";
+	document.getElementById("test").innerHTML="test js1c";
+	let sript=document.createElement('script');
+	document.getElementById("test").innerHTML="test js2c";
 	script.src=src;
-	document.getElementById("test").innerHTML="test js3b";
+	document.getElementById("test").innerHTML="test js3c";
 	document.body.appendChild(script);
-	document.getElementById("test").innerHTML="test js4b";
+	document.getElementById("test").innerHTML="test js4c";
 	return script;
 }
 function loadScript(src,type)
 {
-	let sript=document.createElement("script");
+	let sript=document.createElement('script');
 	script.src=src;
 	script.type=type;
 	document.body.appendChild(script);
