@@ -10,7 +10,8 @@ function loadShader(src)
 	//fragment
 	var fragment=document.createElement('script');
 	fragment.src=src+'/fragment.glsl';
-	document.getElementById("test").innerHTML="test fragment 2";
+	fragment.type='notjs';
+	document.getElementById("test").innerHTML="test fragment 3";
 	return;
 }
 function blah(src)
