@@ -5,11 +5,11 @@ function loadShader(src)
 	//vertex
 	var vertex=document.createElement('script');
 	vertex.src=src+'vertex.glsl';
-	vertex.type='notjs'
+	vertex.type='notjs';
 	document.body.appendChild(vertex);
 	//fragment
 	var fragment=document.createElement('script');
-	fragment.src=src'fragment.glsl';
-	fragment.type='notjs'
+	fragment.src=src+'fragment.glsl';
+	fragment.type='notjs';
 	document.body.appendChild(fragment);
 }
