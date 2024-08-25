@@ -7,9 +7,11 @@
 	<body>
 		<canvas id="canvas"></canvas>
 		<script src="JavaScript/renderer.js"/>
+		<p id="test"></p>
 		<script>
 			var canvas=document.querySelector("#c");
 			var gl=canvas.getContext("webgl");
+			document.getElementById("test").innerHTML="test"
 		</script>
 	</body>
 </html>
