@@ -2,6 +2,7 @@ function loadJavaScript(src)
 {
 	let script=document.createElement("script");
 	script.src=src;
+	script.type="text/javascript";
 	script.async=true;
 	document.body.appendChild(script);
 	return script;
