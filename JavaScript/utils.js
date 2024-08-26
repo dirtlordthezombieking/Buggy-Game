@@ -1,7 +1,7 @@
 function loadJavaScript(src)
 {
 	let script=document.createElement("script");
-	script.src="https://raw.githubusercontent.com/dirtlordthezombieking/BuggyGame/+"src;
+	script.src=src;
 	script.type="text/javascript";
 	//script.async=true;
 	document.body.appendChild(script);
