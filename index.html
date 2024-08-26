@@ -10,11 +10,11 @@
 		<button onclick="doTheThing()">test button</button>
 		<script src="JavaScript/utils.js"></script>
 		<script>
-			var canvas=document.querySelector("#canvas");
-			var gl=canvas.getContext("webgl");
-			document.getElementById("test").innerHTML="test start10";
-			let utils=loadJavaScript("JavaScript/renderer.js");
-			document.getElementById("test").innerHTML="test load10";
+			//var canvas=document.querySelector("#canvas");
+			//var gl=canvas.getContext("webgl");
+			//document.getElementById("test").innerHTML="test start10";
+			//let utils=loadJavaScript("JavaScript/renderer.js");
+			//document.getElementById("test").innerHTML="test load10";
 			//utils.onload=function()
 			//{
 				//document.getElementById("test").innerHTML="test onload1f";
@@ -23,10 +23,11 @@
 			//};
 			function doTheThing()
 			{
-				document.getElementById("test").innerHTML="test onclick1e";
+				document.getElementById("test").innerHTML="test onclick1f";
 				loadShader("shaders/basic");
-				document.getElementById("test").innerHTML="test onclick2e";
+				document.getElementById("test").innerHTML="test onclick3f";
 			}
+			<script src="JavaScript/renderer.js"></script>
 			//document.getElementById("test").innerHTML="test finish";
 		</script>
 	</body>
