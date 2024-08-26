@@ -1,5 +1,5 @@
 let gl;
-
+let aPos;
 function start()
 {
 	document.getElementById("test").innerHTML="retrieving web gl";
