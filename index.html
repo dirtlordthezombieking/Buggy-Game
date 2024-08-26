@@ -11,15 +11,15 @@
 		<script>
 			var canvas=document.querySelector("#canvas");
 			var gl=canvas.getContext("webgl");
-			document.getElementById("test").innerHTML="test start2";
-			let utils=loadJavaScript("JavaScript/renderer.js");
-			document.getElementById("test").innerHTML="test load2";
+			document.getElementById("test").innerHTML="test start3";
+			let utils=loadJavaScript("testJavaScript/renderer.js");
+			document.getElementById("test").innerHTML="test load3";
 			utils.onload=function()
 			{
-				document.getElementById("test").innerHTML="test onload1";
+				document.getElementById("test").innerHTML="test onload1b";
 				loadShader("shaders/basic");
 				document.getElementById("test").innerHTML="test onload2";
-			}
+			};
 			//document.getElementById("test").innerHTML="test finish";
 		</script>
 	</body>
