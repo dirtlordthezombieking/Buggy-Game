@@ -1,5 +1,4 @@
 let gl;
-
 function loadShader(src)
 {
 	//vertex
