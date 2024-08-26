@@ -7,7 +7,7 @@ function loadJavaScript(src)
 	document.body.appendChild(script);
 	return script;
 }
-#https://github.com/dirtlordthezombieking/Buggy-Game/blob/dirtlordthezombieking-patch-6/JavaScript%2Frenderer.js
+//https://github.com/dirtlordthezombieking/Buggy-Game/blob/dirtlordthezombieking-patch-6/JavaScript%2Frenderer.js
 function loadScript(src,type)
 {
 	let script=document.createElement("script");
