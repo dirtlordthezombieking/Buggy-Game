@@ -14,7 +14,7 @@ function createShader(gl,type,source)
 		return shader;
 	}
 	//console.log(gl.getShaderInfoLog(shader));
-	document.getElementById("test").innerHTML=inLog+"shader failed";
+	document.getElementById("test").innerHTML=inLog+"shader failed:\n"+gl.getShaderInfoLog(shader);
 	gl.deleteShader(shader);
 }
 function createShaderProgram(gl,src)
