@@ -41,5 +41,4 @@ function start()
 	let primitiveType=gl.TRIANGLES;
 	let count=3;
 	gl.drawArrays(primitiveType,offset,count);
-	}
 }
