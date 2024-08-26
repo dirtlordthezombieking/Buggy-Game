@@ -15,5 +15,6 @@ function start()
 		var program=createShaderProgram(gl,basicVertex,basicFragment);
 		let inLog=document.getElementById("test").innerHTML+":\n";
 		document.getElementById("test").innerHTML=inLog+"successfully loaded basic shader";
+		aPos=gl.getAttribLocation(program"a_pos");
 	}
 }
