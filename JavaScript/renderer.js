@@ -1,5 +1,6 @@
 let gl;
 let aPos;
+let uRes;
 let posBuff;
 function start()
 {
@@ -16,13 +17,17 @@ function start()
 		return;
 	}
 	aPos=gl.getAttribLocation(program,"a_pos");
+	uRes=gl.getUniformLocation(program,"u_res");
 	posBuff=gl.createBuffer();
 	gl.bindBuffer(gl.ARRAY_BUFFER,posBuff);
 	let positions=
 	[
-		0.0,0.0,
-		0.0,0.5,
-		0.7,0.0
+		10.0,20.0,
+		80.0,20.0,
+		10.0,30.0,
+		10.0,30.0,
+		80.0,20.0,
+		80.0,30.0
 	];
 	gl.bufferData(gl.ARRAY_BUFFER,new Float32Array(positions),gl.STATIC_DRAW);
 	resizeCanvasToDisplaySize(gl.canvas);
@@ -38,7 +43,8 @@ function start()
 	let stride=0;
 	let offset=0;
 	gl.vertexAttribPointer(aPos,size,type,normalize,stride,offset);
+	gl.uniform2f(uRes,gl.canvas.width,gl.canvas.height);
 	let primitiveType=gl.TRIANGLES;
-	let count=3;
+	let count=6;
 	gl.drawArrays(primitiveType,offset,count);
 }
