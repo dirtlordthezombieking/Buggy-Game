@@ -7,8 +7,7 @@ function loadJavaScript(src)
 	document.body.appendChild(script);
 	return script;
 }
-//https://github.com/dirtlordthezombieking/Buggy-Game/blob/dirtlordthezombieking-patch-6/JavaScript%2Frenderer.js
-//https://raw.githubusercontent.com/dirtlordthezombieking/LoreBook/main/Images/sketch-1641141441537.png" alt="LoreBook"></a>
+//https://raw.githubusercontent.com/dirtlordthezombieking/BuggyGame/
 function loadScript(src,type)
 {
 	let script=document.createElement("script");
