@@ -1,4 +1,3 @@
-let test1=32;
 function createShader(gl,type,source)
 {
 	let inLog=document.getElementById("test").innerHTML+": ";
