@@ -1,12 +1,9 @@
 function loadJavaScript(src)
 {
-	document.getElementById("test").innerHTML="test js1d";
 	let script=document.createElement("script");
-	document.getElementById("test").innerHTML="test js2d";
 	script.src=src;
-	document.getElementById("test").innerHTML="test js3d";
+	script.async=true;
 	document.body.appendChild(script);
-	document.getElementById("test").innerHTML="test js4d";
 	return script;
 }
 function loadScript(src,type)
@@ -14,6 +11,7 @@ function loadScript(src,type)
 	let script=document.createElement("script");
 	script.src=src;
 	script.type=type;
+	script.async=true;
 	document.body.appendChild(script);
 	return script;
 }
