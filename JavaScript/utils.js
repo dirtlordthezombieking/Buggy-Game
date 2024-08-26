@@ -39,7 +39,7 @@ function resizeCanvasToDisplaySize(canvas)
 	}
 	return needResize;
 }
-function log(msg)
+function logMessage(msg)
 {
-	
+	document.getElementById("test").innerHTML=document.getElementById("test").innerHTML+"\n"+msg;
 }
