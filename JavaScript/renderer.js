@@ -11,6 +11,9 @@ function start()
 	}
 	else
 	{
-		document.getElementById("test").innerHTML="successfully retrieved web gl";
+		document.getElementById("test").innerHTML="successfully retrieved web gl: loading basic shader";
+		var program=createProgram(gl,"basic-");
+		let inLog=document.getElementById("test").innerHTML;
+		document.getElementById("test").innerHTML=inLog+"successfully loaded basic shader";
 	}
 }
