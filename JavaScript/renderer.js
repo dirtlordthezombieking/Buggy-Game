@@ -11,7 +11,7 @@ function start()
 	}
 	else
 	{
-		document.getElementById("test").innerHTML="successfully retrieved web gl:\n\tloading shader program \"basic\"";
+		document.getElementById("test").innerHTML="successfully retrieved web gl:\n\tLoading shader program \"basic\"...";
 		var program=createShaderProgram(gl,"basic-");
 		let inLog=document.getElementById("test").innerHTML+":\n";
 		document.getElementById("test").innerHTML=inLog+"successfully loaded basic shader";
