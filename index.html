@@ -9,14 +9,14 @@
 		<canvas id="canvas"></canvas>
 		<button onclick="doTheThing()">start</button>
 		<script>
-			document.getElementById("test").innerHTML="script started";
+			document.getElementById("test").innerHTML="script run started";
 			function doTheThing()
 			{
-				document.getElementById("test").innerHTML="button started";
+				document.getElementById("test").innerHTML="button run started";
 				start();
-				document.getElementById("test").innerHTML="button finished";
+				//document.getElementById("test").innerHTML="button finished";
 			}
-			document.getElementById("test").innerHTML="script finished";
+			document.getElementById("test").innerHTML="script run finished";
 		</script>
 		<script src="JavaScript/renderer.js"></script>
 		<script src="JavaScript/utils.js"></script>
