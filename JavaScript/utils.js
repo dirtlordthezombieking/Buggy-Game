@@ -14,7 +14,7 @@ function createShader(gl,type,source)
 		return shader;
 	}
 	//console.log(gl.getShaderInfoLog(shader));
-	document.getElementById("test").innerHTML=inLog+"shader failed";
+	document.getElementById("test").innerHTML=inLog+"shader failed:\n"+gl.getShaderInfoLog(shader);
 	gl.deleteShader(shader);
 }
 function createShaderProgram(gl,src)
@@ -24,10 +24,10 @@ function createShaderProgram(gl,src)
 	let vertexShaderSource = document.querySelector("#"+src+"vertex").text;
 	document.getElementById("test").innerHTML=inLog+"retrieving fragment code";
 	let fragmentShaderSource = document.querySelector("#"+src+"fragment").text;
-	document.getElementById("test").innerHTML=inLog+"compiling vertex code";
+	document.getElementById("test").innerHTML=inLog+"compiling vertex code...";
 	let vertexShader=createShader(gl,gl.VERTEX_SHADER,vertexShaderSource);
 	inLog=document.getElementById("test").innerHTML+":\n\t\t";
-	document.getElementById("test").innerHTML=inLog+"compiling fragment code";
+	document.getElementById("test").innerHTML=inLog+"compiling fragment code...";
 	let fragmentShader=createShader(gl,gl.FRAGMENT_SHADER,fragmentShaderSource);
 	inLog=document.getElementById("test").innerHTML+":\n\t\t";
 	document.getElementById("test").innerHTML=inLog+"compiling program";
