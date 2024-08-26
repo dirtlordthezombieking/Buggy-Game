@@ -7,20 +7,16 @@
 	<body>
 		<p id="test">test info goes here</p>
 		<canvas id="canvas"></canvas>
-		<button onclick="doTheThing()">test button</button>
-		<script src="JavaScript/utils.js"></script>
+		<button onclick="doTheThing()">start</button>
 		<script>
-			document.getElementById("test").innerHTML="test start";
 			function doTheThing()
 			{
-				document.getElementById("test").innerHTML="test onclick1h";
-				let i1=test1;
-				document.getElementById("test").innerHTML="test onclick2h";
-				let i2=test2;
-				document.getElementById("test").innerHTML="test onclick3h";
+				start();
 			}
-			document.getElementById("test").innerHTML="test finish";
 		</script>
 		<script src="JavaScript/renderer.js"></script>
+		<script src="JavaScript/utils.js"></script>
+		<script id="basic-vertex" src="shader/basic/vertex.glsl" type="notjs"></script>
+		<script id="basic-fragment" src="shader/basic/fragment.glsl" type="notjs"></script>
 	</body>
 </html>
