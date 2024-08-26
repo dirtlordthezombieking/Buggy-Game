@@ -39,3 +39,7 @@ function resizeCanvasToDisplaySize(canvas)
 	}
 	return needResize;
 }
+function log(msg)
+{
+	
+}
