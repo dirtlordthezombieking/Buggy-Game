@@ -12,20 +12,20 @@
 		<script>
 			var canvas=document.querySelector("#canvas");
 			var gl=canvas.getContext("webgl");
-			document.getElementById("test").innerHTML="test start6";
+			document.getElementById("test").innerHTML="test start7";
 			let utils=loadJavaScript("JavaScript/renderer.js");
-			document.getElementById("test").innerHTML="test load6";
-			utils.onload=function()
-			{
-				document.getElementById("test").innerHTML="test onload1e";
-				loadShader("shaders/basic");
-				document.getElementById("test").innerHTML="test onload2e";
-			};
+			document.getElementById("test").innerHTML="test load7";
+			//utils.onload=function()
+			//{
+				//document.getElementById("test").innerHTML="test onload1f";
+				//loadShader("shaders/basic");
+				//document.getElementById("test").innerHTML="test onload2f";
+			//};
 			function click()
 			{
-				document.getElementById("test").innerHTML="test onclick1";
+				document.getElementById("test").innerHTML="test onclick1b";
 				loadShader("shaders/basic");
-				document.getElementById("test").innerHTML="test onclick2";
+				document.getElementById("test").innerHTML="test onclick2b";
 			}
 			//document.getElementById("test").innerHTML="test finish";
 		</script>
