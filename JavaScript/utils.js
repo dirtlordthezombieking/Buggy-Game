@@ -8,7 +8,7 @@ function createShader(gl,type,source)
 	{
 		return shader;
 	}
-	document.getElementById("test").innerHTML="Shader failed:\n"+gl.getShaderInfoLog(shader)+"\nIn:\n"+source;
+	logMessage("Shader failed:\n"+gl.getShaderInfoLog(shader)+"\nIn:\n"+source);
 	gl.deleteShader(shader);
 }
 function createShaderProgram(gl,vertexCode,fragmentCode)
