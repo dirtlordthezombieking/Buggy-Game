@@ -25,7 +25,7 @@ function createShaderProgram(gl,vertexCode,fragmentCode)
 	inLog=document.getElementById("test").innerHTML+":\n\t\t";
 	document.getElementById("test").innerHTML=inLog+"compiling fragment code...";
 	let fragmentShader=createShader(gl,gl.FRAGMENT_SHADER,fragmentCode);
-	inLog=document.getElementById("test").innerHTML+":\n\t\t";
+	inLog=document.getElementById("test").innerHTML+":\n\t";
 	document.getElementById("test").innerHTML=inLog+"compiling program";
 	var program=gl.createProgram();
 	document.getElementById("test").innerHTML=inLog+"attaching vertex code";
