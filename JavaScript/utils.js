@@ -1,6 +1,6 @@
 function createShader(gl,type,source)
 {
-	let inLog=document.getElementById("test").innerHTML+": ";
+	let inLog=document.getElementById("test").innerHTML+":\n\t\t\t";
 	document.getElementById("test").innerHTML=inLog+"creating base shader";
 	let shader=gl.createShader(type);
 	document.getElementById("test").innerHTML=inLog+"adding code";
@@ -19,17 +19,17 @@ function createShader(gl,type,source)
 }
 function createShaderProgram(gl,src)
 {
-	let inLog=document.getElementById("test").innerHTML+": ";
+	let inLog=document.getElementById("test").innerHTML+":\n\t\t";
 	document.getElementById("test").innerHTML=inLog+"retrieving vertex code";
 	let vertexShaderSource = document.querySelector("#"+src+"vertex").text;
 	document.getElementById("test").innerHTML=inLog+"retrieving fragment code";
 	let fragmentShaderSource = document.querySelector("#"+src+"fragment").text;
 	document.getElementById("test").innerHTML=inLog+"compiling vertex code";
 	let vertexShader=createShader(gl,gl.VERTEX_SHADER,vertexShaderSource);
-	inLog=document.getElementById("test").innerHTML+": ";
+	inLog=document.getElementById("test").innerHTML+":\n\t\t";
 	document.getElementById("test").innerHTML=inLog+"compiling fragment code";
 	let fragmentShader=createShader(gl,gl.FRAGMENT_SHADER,fragmentShaderSource);
-	inLog=document.getElementById("test").innerHTML+": ";
+	inLog=document.getElementById("test").innerHTML+":\n\t\t";
 	document.getElementById("test").innerHTML=inLog+"compiling program";
 	var program=gl.createProgram();
 	document.getElementById("test").innerHTML=inLog+"attaching vertex code";
