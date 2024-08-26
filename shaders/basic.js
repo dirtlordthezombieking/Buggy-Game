@@ -7,7 +7,7 @@ const basicFragment=
 "}";
 //--VERTEX--
 const basicVertex=
-"attribute vec4 a_pos"+
+"attribute vec4 a_pos;"+
 "void main()"+
 "{"+
 "        gl_Position=a_pos"+
