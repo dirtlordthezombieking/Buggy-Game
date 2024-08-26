@@ -14,7 +14,7 @@ function createShader(gl,type,source)
 		return shader;
 	}
 	//console.log(gl.getShaderInfoLog(shader));
-	document.getElementById("test").innerHTML=inLog+"shader failed:\n"+gl.getShaderInfoLog(shader)+"\n\t\t\tIn:\n"+source;
+	document.getElementById("test").innerHTML=inLog+"Shader failed:\n"+gl.getShaderInfoLog(shader)+"\n\t\t\tIn:\n"+source;
 	gl.deleteShader(shader);
 }
 function createShaderProgram(gl,vertexCode,fragmentCode)
