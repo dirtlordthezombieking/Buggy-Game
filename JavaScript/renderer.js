@@ -8,7 +8,7 @@ function start()
 	if(!gl)
 	{
 		document.getElementById("test").innerHTML="web gl not available";
-	return;
+		return;
 	}
 	var program=createShaderProgram(gl,basicVertex,basicFragment);
 	if(!program)
