@@ -12,7 +12,7 @@ function start()
 	else
 	{
 		document.getElementById("test").innerHTML="successfully retrieved web gl:\n\tLoading GL shader program \"basic\"...";
-		var program=createShaderProgram(gl,"basic");
+		var program=createShaderProgram(gl,basicVertex,basicFragment);
 		let inLog=document.getElementById("test").innerHTML+":\n";
 		document.getElementById("test").innerHTML=inLog+"successfully loaded basic shader";
 	}
