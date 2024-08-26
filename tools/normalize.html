@@ -1,0 +1,57 @@
+<!Doctype html>
+<html lang="en">
+	<head>
+		<meta name="description" content="programmers calculator"/>
+		<meta charset="utf-8/>
+		<title>Programmers Calculator</title>
+		<meta name="viewport content="width=device-width, initial-scale=1">
+		<meta name="author" content="Dirtlord The Zombie King">
+	</head>
+	<body>
+		<p style="text-align: center;"><b><i>3D Normals</i></b></p>
+		<br>
+		<br>
+		<center>
+			V1:<input type="number" id="x1"/><input type="number" id="y1"/><input type="number" id="z1"/><br>
+			V2:<input type="number" id="x2"/><input type="number" id="y2"/><input type="number" id="z2"/><br>
+			V3:<input type="number" id="x3"/><input type="number" id="y3"/><input type="number" id="z3"/><br>
+			<button type="button" onclick="go()">Calculate</button>
+			<p id="output"/>
+		</center>
+		<script>
+			document.getElementById("output").innerHTML="Fill in values and hit calculate."
+			function go()
+			{
+				document.getElementById("output").innerHTML="Please fill in all fields."
+				//In
+				let x1=document.getElementById("x1").value;
+				let y1=document.getElementById("y1").value;
+				let z1=document.getElementById("z1").value;
+				let x2=document.getElementById("x2").value;
+				let y2=document.getElementById("y2").value;
+				let z2=document.getElementById("z2").value;
+				let x3=document.getElementById("x3").value;
+				let y3=document.getElementById("y3").value;
+				let z3=document.getElementById("z3").value;
+				//Math 1
+				let ax=x2-x1;
+				let ay=y2-y1;
+				let az=z2-z1;
+				let bx=x3-x1;
+				let by=y3-y1;
+				let bz=z3-z1;
+				//Math 2
+				let x=(ay*bz)-(az*by);
+				let y=(az*bx)-(ax*bz);
+				let z=(ax*by)-(ay*bx);
+				//Out
+				document.getElementById("output").innerHTML=x+","+y+","+z;
+				//A = p2 - p1
+				//B = p3 - p1
+				//Nx = Ay * Bz - Az * By
+				//Ny = Az * Bx - Ax * Bz
+				//Nz = Ax * By - Ay * Bx
+			}
+		</script>
+	</body>
+<html>
