@@ -25,7 +25,7 @@ function createShaderProgram(gl,vertexCode,fragmentCode)
 	inLog=document.getElementById("test").innerHTML+":\n\t\t";
 	document.getElementById("test").innerHTML=inLog+"compiling fragment code...";
 	let fragmentShader=createShader(gl,gl.FRAGMENT_SHADER,fragmentCode);
-	inLog=document.getElementById("test").innerHTML+":\n\t\t";
+	inLog=document.getElementById("test").innerHTML+":\n\t";
 	document.getElementById("test").innerHTML=inLog+"compiling program";
 	var program=gl.createProgram();
 	document.getElementById("test").innerHTML=inLog+"attaching vertex code";
@@ -44,4 +44,16 @@ function createShaderProgram(gl,vertexCode,fragmentCode)
 	//console.log(gl.getProgramInfoLog(program));
 	document.getElementById("test").innerHTML=inLog+"shader failed to compile";
 	gl.deleteProgram(program);
+}
+function resizeCanvasToDisplaySize(canvas)
+{
+	const displayWidth=canvas.clientWidth;
+	const displayHeight=canvas.clientHeight;
+	const needResize=canvas.width!==displayWidth||canvas.height!==displayHeight;
+	if(needResize)
+	{
+		canvas.width  = displayWidth;
+		canvas.height = displayHeight;
+	}
+	return needResize;
 }
