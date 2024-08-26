@@ -7,25 +7,25 @@
 	<body>
 		<p id="test">test info goes here</p>
 		<canvas id="canvas"></canvas>
-		<button onclick="click()">test button</button>
+		<button onclick="doTheThing()">test button</button>
 		<script src="JavaScript/utils.js"></script>
 		<script>
 			var canvas=document.querySelector("#canvas");
 			var gl=canvas.getContext("webgl");
-			document.getElementById("test").innerHTML="test start9";
+			document.getElementById("test").innerHTML="test start10";
 			let utils=loadJavaScript("JavaScript/renderer.js");
-			document.getElementById("test").innerHTML="test load9";
+			document.getElementById("test").innerHTML="test load10";
 			//utils.onload=function()
 			//{
 				//document.getElementById("test").innerHTML="test onload1f";
 				//loadShader("shaders/basic");
 				//document.getElementById("test").innerHTML="test onload2f";
 			//};
-			function click()
+			function doTheThing()
 			{
-				document.getElementById("test").innerHTML="test onclick1d";
+				document.getElementById("test").innerHTML="test onclick1e";
 				loadShader("shaders/basic");
-				document.getElementById("test").innerHTML="test onclick2d";
+				document.getElementById("test").innerHTML="test onclick2e";
 			}
 			//document.getElementById("test").innerHTML="test finish";
 		</script>
