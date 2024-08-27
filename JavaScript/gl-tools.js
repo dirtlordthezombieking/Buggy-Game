@@ -14,24 +14,25 @@ function Uniform(uniformSize,shaderProgram,location,uniformValue)
 		{
 			gl.uniform2f(this.loc,this.value[0]);
 		}
-		if(this.size==1)
+		else if(this.size==1)
 		{
 			gl.uniform2f(this.loc,this.value[0],this.value[1]);
 		}
-		if(this.size==1)
+		else if(this.size==1)
 		{
 			gl.uniform2f(this.loc,this.value[0],this.value[1],this.value[2]);
 		}
-		if(this.size==1)
+		else if(this.size==1)
 		{
 			gl.uniform2f(this.loc,this.value[0],this.value[1],this.value[2],this.value[3]);
 		}
 	};
 }
-function texture(shaderProgram,imageSrc)
+function texture(shaderProgram,location,imageSrc)
 {
 	this.prog=shaderProgram;
 	this.image=imageSrc;
+	this.loc=gl.getUniformLocation(program,location);
 	this.use=function(pos)
 	{
 		let texture=gl.createTexture();
@@ -41,6 +42,8 @@ function texture(shaderProgram,imageSrc)
 		gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.NEAREST);
 		gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MAG_FILTER,gl.NEAREST);
 		gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,gl.RGBA,gl.UNSIGNED_BYTE,this.image);
+		textures.push(texture);
+		
 	}
 }
 function Attribute(attributeSize,shaderProgram,location, attributeValue)
@@ -51,21 +54,20 @@ function Attribute(attributeSize,shaderProgram,location, attributeValue)
 	this.value=attributeValue;
 	this.use=function();
 	{
-		if(this.size==1)
-		{
-			gl.uniform2f(this.loc,this.value[0]);
-		}
-		if(this.size==1)
-		{
-			gl.uniform2f(this.loc,this.value[0],this.value[1]);
-		}
-		if(this.size==1)
-		{
-			gl.uniform2f(this.loc,this.value[0],this.value[1],this.value[2]);
-		}
-		if(this.size==1)
-		{
-			gl.uniform2f(this.loc,this.value[0],this.value[1],this.value[2],this.value[3]);
-		}
+		let texCoordBuff=gl.createBuffer();
+		gl.bindBuffer(gl.ARRAY_BUFFER,texCoordBuff);
+		gl.bufferData(gl.ARRAY_BUFFER,new Float32Array
+		(
+			[
+				0.0,0.0,
+				1.0,0.0,
+				0.0,1.0,
+				0.0,1.0,
+				1.0,0.0,
+				1.0,1.0
+			]
+		),gl.STATIC_DRAW);
+		gl.enableVertexAttribArray(aTexCoord);
+		gl.vertexAttribPointer(aTexCoord,2,gl.FLOAT,false,0,0);
 	};
 }
