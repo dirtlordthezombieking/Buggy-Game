@@ -1,5 +1,7 @@
 let gl;
 let aPos;
+let aTexCoord;
+let uColour;
 let uRes;
 let posBuff;
 let program;
@@ -34,12 +36,12 @@ function draw()
 	aPos=gl.getAttribLocation(program,"a_pos");
 	aTexCoord=gl.getAttribLocation(program,"a_texCoord");
 	uRes=gl.getUniformLocation(program,"u_res");
-	let uColour = gl.getUniformLocation(program,"u_colour");
+	uColour = gl.getUniformLocation(program,"u_colour");
 	logMessage("values set");
 //texcord
-	texCoordBuffer=gl.createBuffer();
+	let texCoordBuff=gl.createBuffer();
 	logMessage("1/11");
-	gl.bindBuffer(gl.ARRAY_BUFFER,texCoordBuffer);
+	gl.bindBuffer(gl.ARRAY_BUFFER,texCoordBuff);
 	logMessage("2/11");
 	gl.bufferData(gl.ARRAY_BUFFER,new Float32Array
 	(

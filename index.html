@@ -14,10 +14,17 @@
 		<p id="test" style="white-space:pre;">log...</p>
 		<script src="JavaScript/utils.js"></script>
 		<script>
-			logMessage("Log running properly.")
+			logMessage("Page Version: 0.0.0")
 			function doTheThing()
 			{
-				start();
+				try
+				{
+					start();
+				}
+				catch(e)
+				{
+					logMessage(e.message):
+				}
 			}
 		</script>
 		<script src="JavaScript/renderer.js"></script>
