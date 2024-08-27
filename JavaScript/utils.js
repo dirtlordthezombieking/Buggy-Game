@@ -62,6 +62,17 @@ function loadImage(src,finishImageLoad)
 		{
 			logMessage("error:\n"+e.message);
 		}
-};
+	};
 }
-logMessage("Utils Version: 0.0.6");
+logMessage("Utils Version: 0.0.7");
+//testing
+function loadScrip(src,onFinishAction)
+{
+	let script=document.createElement('script');
+	script.onload=function()
+	{
+		onFinishAction()
+	};
+	script.src=src;
+	document.body.appendChild(script);
+}
