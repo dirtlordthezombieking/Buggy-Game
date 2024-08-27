@@ -19,6 +19,11 @@ function start()
 		return;
 	}
 	resizeCanvasToDisplaySize(gl.canvas);
+	function loadImage(src,function(img)
+	{
+		image=img;
+		draw();
+	});
 }
 function draw()
 {
@@ -42,7 +47,14 @@ function draw()
 	),gl.STATIC_DRAW);
 	gl.enableVertexAttribArray(aTexCoord);
 	gl.vertexAttribPointer(aTexCoord,2,gl.FLOAT,false,0,0);
-//image
+	let texture=gl.createTexture();
+	gl.bindTexture(gl.TEXTURE_2D,texture);
+	gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_S,gl.CLAMP_TO_EDGE);
+	gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_T,gl.CLAMP_TO_EDGE);
+	gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.NEAREST);
+	gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MAG_FILTER,gl.NEAREST);
+	gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,gl.RGBA,gl.UNSIGNED_BYTE,image);
+//position
 	posBuff=gl.createBuffer();
 	gl.bindBuffer(gl.ARRAY_BUFFER,posBuff);
 	gl.viewport(0,0,gl.canvas.width,gl.canvas.height);
@@ -58,12 +70,12 @@ function draw()
 	let offset=0;
 	gl.vertexAttribPointer(aPos,size,type,normalize,stride,offset);
 	gl.uniform2f(uRes,gl.canvas.width,gl.canvas.height);
-	for(var i=0;i<50;i++)
-	{
+	//for(var i=0;i<50;i++)
+	//{
 		setRectangle(gl,randomInt(300),randomInt(300),randomInt(300),randomInt(300));
 	gl.uniform4f(uColour,Math.random(),Math.random(),Math.random(),1);
 		gl.drawArrays(gl.TRIANGLES,0,6);
-	}
+	//}
 }
 function randomInt(range)
 {
