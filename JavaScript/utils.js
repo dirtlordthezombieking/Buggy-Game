@@ -48,7 +48,8 @@ function loadImage(src,finishImageLoad)
 	logMessage("load started");
 	var image=new Image();
 	logMessage("image created");
-	image.src="https://raw.githubusercontent.com/dirtlordthezombieking/Buggy-Game/main/"+src;
+	image.src=//"https://raw.githubusercontent.com/dirtlordthezombieking/Buggy-Game/main/"+
+	src;
 	logMessage("data applied");
 	image.onload=function()
 	{
@@ -63,4 +64,4 @@ function loadImage(src,finishImageLoad)
 		}
 };
 }
-logMessage("Utils Version: 0.0.5");
+logMessage("Utils Version: 0.0.6");
