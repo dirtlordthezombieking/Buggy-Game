@@ -68,11 +68,17 @@ logMessage("Utils Version: 0.0.7");
 //testing
 function loadScrip(src,onFinishAction)
 {
+	logMessage("start load");
 	let script=document.createElement('script');
+	logMessage("create tag");
 	script.onload=function()
 	{
+		logMessage("loaded");
 		onFinishAction()
 	};
+	logMessage("set onload");
 	script.src=src;
+	logMessage("set src");
 	document.body.appendChild(script);
+	logMessage("add script");
 }
