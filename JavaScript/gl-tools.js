@@ -27,5 +27,16 @@ function Uniform(uniformSize,glContext,shaderProgram,location, uniformValue)
 		{
 			gl.uniform2f(this.loc,this.value[0],this.value[1],this.value[2],this.value[3]);
 		}
-	}:
+	};
 }
+function texture(glContext,shaderProgram,imageSrc)
+{
+	this.gl=glContext;
+	this.prog=shaderProgram;
+	this.image=imageSrc;
+	this.use=function(pos)
+	{
+		
+	}
+}
+function 
