@@ -26,6 +26,26 @@
 					logMessage("error:\n"+e.message);
 				}
 			}
+			try
+			{
+				logMessage("loading test");
+				loadScrip("JavaScript/tests.js",function()
+				{
+					logMessage("loaded");
+					try
+					{
+						
+					}
+					catch(e)
+					{
+						logMessage("error:\n"+e.message);
+					}
+				});
+			}
+			catch(e)
+			{
+				logMessage("error:\n"+e.message);
+			}
 		</script>
 		<script src="JavaScript/renderer.js"></script>
 		<script src="shaders/basic.js"></script>
