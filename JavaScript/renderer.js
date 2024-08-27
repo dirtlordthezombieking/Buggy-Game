@@ -16,9 +16,27 @@ function start()
 	{
 		return;
 	}
-	let uColour = gl.getUniformLocation(program,"u_colour");
 	aPos=gl.getAttribLocation(program,"a_pos");
+	aTexCoord=gl.getAttribLocation(program,"a_texCoord");
 	uRes=gl.getUniformLocation(program,"u_res");
+	let uColour = gl.getUniformLocation(program,"u_colour");
+	texCoordBuffer = gl.createBuffer();
+//texcord
+	gl.bindBuffer(gl.ARRAY_BUFFER,texCoordBuffer);
+	gl.bufferData(gl.ARRAY_BUFFER,new Float32Array
+	(
+		[
+			0.0,0.0,
+			1.0,0.0,
+			0.0,1.0,
+			0.0,1.0,
+			1.0,0.0,
+			1.0,1.0
+		]
+	),gl.STATIC_DRAW);
+	gl.enableVertexAttribArray(texCoordLocation);
+	gl.vertexAttribPointer(texCoordLocation,2,gl.FLOAT,false,0,0);
+//image
 	posBuff=gl.createBuffer();
 	gl.bindBuffer(gl.ARRAY_BUFFER,posBuff);
 	resizeCanvasToDisplaySize(gl.canvas);
