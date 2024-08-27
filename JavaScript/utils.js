@@ -1,4 +1,3 @@
-logMessage("Utils Version: 0.0.0")
 function createShader(gl,type,source)
 {
 	let shader=gl.createShader(type);
@@ -53,3 +52,4 @@ function loadImage(src,finish)
 		finish(image);
 	};
 }
+logMessage("Utils Version: 0.0.0")
