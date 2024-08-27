@@ -1,11 +1,13 @@
-function Uniform(uniformSize,gl)
+function Uniform(uniformSize,glContext,shaderProgram)
 {
 	this.size=uniformSize;
-	this.set=function(value,gl);
+	this.gl=glContext;
+	this.program=shaderProgram;
+	this.set=function(value);
 	{
 		
 	}
-	this.use=function(gl);
+	this.use=function();
 	{
 		
 	}
