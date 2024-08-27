@@ -4,10 +4,15 @@
 		<meta charset="utf-8"/>
 		<title>A BUGGY GAME</title>
 	</head>
-	<body>
+	<body style="text-align:center;">
 		<canvas id="canvas" width="400" height="300"></canvas>
-		<p id="test" style="white-space:pre;">log...</p>
+		<br>
+		<br>
 		<button onclick="doTheThing()">start</button>
+		<br>
+		<br>
+		<p id="test" style="white-space:pre;">log...</p>
+		<script src="JavaScript/utils.js"></script>
 		<script>
 			logMessage("Log running properly.")
 			function doTheThing()
@@ -16,7 +21,6 @@
 			}
 		</script>
 		<script src="JavaScript/renderer.js"></script>
-		<script src="JavaScript/utils.js"></script>
 		<script src="shaders/basic.js"></script>
 	</body>
 </html>
