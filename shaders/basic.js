@@ -1,3 +1,4 @@
+logMessage("Basic Shader Version: 0.0.0")
 //--FRAGMENT--
 const basicFragment=
 `precision mediump float;

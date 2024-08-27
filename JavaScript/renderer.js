@@ -1,3 +1,4 @@
+logMessage("Renderer Version: 0.0.0")
 let gl;
 let aPos;
 let uRes;
@@ -19,7 +20,7 @@ function start()
 		return;
 	}
 	resizeCanvasToDisplaySize(gl.canvas);
-	function loadImage("images/stand in.png",function(img)
+	loadImage("images/stand in.png",function(img)
 	{
 		image=img;
 		draw();
