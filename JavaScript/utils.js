@@ -53,7 +53,14 @@ function loadImage(src,finishImageLoad)
 	image.onload=function()
 	{
 		logMessage("image load successful");
-		finishImageLoad(image);
-	};
+		try
+		{
+			finishImageLoad(image);
+		}
+		catch(e)
+		{
+			logMessage("error:\n"+e.message);
+		}
+};
 }
-logMessage("Utils Version: 0.0.4");
+logMessage("Utils Version: 0.0.5");
