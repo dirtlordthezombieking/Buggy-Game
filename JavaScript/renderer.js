@@ -17,6 +17,9 @@ function start()
 		return;
 	}
 	let uColour = gl.getUniformLocation(program,"u_colour");
+	aPos=gl.getAttribLocation(program,"a_pos");
+	uRes=gl.getUniformLocation(program,"u_res");
+	posBuff=gl.createBuffer();
 	for(var i=0;i<50;i++)
 	{
 		setRectangle(gl,randomInt(300),randomInt(300),randomInt(300),randomInt(300));
