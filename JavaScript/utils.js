@@ -43,7 +43,7 @@ function logMessage(msg)
 {
 	document.getElementById("test").innerHTML=document.getElementById("test").innerHTML+"\n"+msg;
 }
-function loadImage(src,finish)
+function loadImage(src,finishImageLoad)
 {
 	logMessage("load started");
 	var image=new Image();
@@ -53,7 +53,7 @@ function loadImage(src,finish)
 	image.onload=function()
 	{
 		logMessage("image load successful");
-		finish(image);
+		finishImageLoad(image);
 	};
 }
-logMessage("Utils Version: 0.0.2");
+logMessage("Utils Version: 0.0.3");
