@@ -1,7 +1,6 @@
-function Uniform(uniformSize,glContext,shaderProgram,location, uniformValue)
+function Uniform(uniformSize,shaderProgram,location,uniformValue)
 {
 	this.size=uniformSize;
-	this.gl=glContext;
 	this.prog=shaderProgram;
 	this.loc=gl.getUniformLocation(program,location);
 	this.value=uniformValue;
@@ -29,14 +28,44 @@ function Uniform(uniformSize,glContext,shaderProgram,location, uniformValue)
 		}
 	};
 }
-function texture(glContext,shaderProgram,imageSrc)
+function texture(shaderProgram,imageSrc)
 {
-	this.gl=glContext;
 	this.prog=shaderProgram;
 	this.image=imageSrc;
 	this.use=function(pos)
 	{
-		
+		let texture=gl.createTexture();
+		gl.bindTexture(gl.TEXTURE_2D,texture);
+		gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_S,gl.CLAMP_TO_EDGE);
+		gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_T,gl.CLAMP_TO_EDGE);
+		gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.NEAREST);
+		gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MAG_FILTER,gl.NEAREST);
+		gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,gl.RGBA,gl.UNSIGNED_BYTE,this.image);
 	}
 }
-function 
+function Attribute(attributeSize,shaderProgram,location, attributeValue)
+{
+	this.size=attributeSize;
+	this.prog=shaderProgram;
+	this.loc=gl.getUniformLocation(program,location);
+	this.value=attributeValue;
+	this.use=function();
+	{
+		if(this.size==1)
+		{
+			gl.uniform2f(this.loc,this.value[0]);
+		}
+		if(this.size==1)
+		{
+			gl.uniform2f(this.loc,this.value[0],this.value[1]);
+		}
+		if(this.size==1)
+		{
+			gl.uniform2f(this.loc,this.value[0],this.value[1],this.value[2]);
+		}
+		if(this.size==1)
+		{
+			gl.uniform2f(this.loc,this.value[0],this.value[1],this.value[2],this.value[3]);
+		}
+	};
+}
