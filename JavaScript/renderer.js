@@ -20,10 +20,24 @@ function start()
 	aPos=gl.getAttribLocation(program,"a_pos");
 	uRes=gl.getUniformLocation(program,"u_res");
 	posBuff=gl.createBuffer();
+	resizeCanvasToDisplaySize(gl.canvas);
+	gl.viewport(0,0,gl.canvas.width,gl.canvas.height);
+	gl.clearColor(0,0,0,1);
+	gl.clear(gl.COLOR_BUFFER_BIT);
+	gl.useProgram(program);
+	gl.enableVertexAttribArray(aPos);
+	gl.bindBuffer(gl.ARRAY_BUFFER,posBuff);
+	let size=2;
+	let type=gl.FLOAT;
+	let normalize=false;
+	let stride=0;
+	let offset=0;
+	gl.vertexAttribPointer(aPos,size,type,normalize,stride,offset);
+	gl.uniform2f(uRes,gl.canvas.width,gl.canvas.height);
 	for(var i=0;i<50;i++)
 	{
 		setRectangle(gl,randomInt(300),randomInt(300),randomInt(300),randomInt(300));
-	gl.uniform4f(colorUniformLocation,Math.random(),Math.random(),Math.random(),1);
+	gl.uniform4f(uColour,Math.random(),Math.random(),Math.random(),1);
 		gl.drawArrays(gl.TRIANGLES,0,6);
 	}
 }
