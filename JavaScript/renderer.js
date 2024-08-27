@@ -38,7 +38,9 @@ function draw()
 	logMessage("values set");
 //texcord
 	texCoordBuffer=gl.createBuffer();
+	logMessage("1/11");
 	gl.bindBuffer(gl.ARRAY_BUFFER,texCoordBuffer);
+	logMessage("2/11");
 	gl.bufferData(gl.ARRAY_BUFFER,new Float32Array
 	(
 		[
@@ -50,14 +52,23 @@ function draw()
 			1.0,1.0
 		]
 	),gl.STATIC_DRAW);
+	logMessage("3/11");
 	gl.enableVertexAttribArray(aTexCoord);
+	logMessage("4/11");
 	gl.vertexAttribPointer(aTexCoord,2,gl.FLOAT,false,0,0);
+	logMessage("5/11");
 	let texture=gl.createTexture();
+	logMessage("6/11");
 	gl.bindTexture(gl.TEXTURE_2D,texture);
+	logMessage("7/11");
 	gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_S,gl.CLAMP_TO_EDGE);
+	logMessage("8/11");
 	gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_T,gl.CLAMP_TO_EDGE);
+	logMessage("9/11");
 	gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.NEAREST);
+	logMessage("10/11");
 	gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MAG_FILTER,gl.NEAREST);
+	logMessage("11/11");
 	gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,gl.RGBA,gl.UNSIGNED_BYTE,image);
 	logMessage("image applied");
 //position
