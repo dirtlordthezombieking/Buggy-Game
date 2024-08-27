@@ -1,0 +1,4 @@
+function Uniform(uniformSize)
+{
+	this.size=uniformSize;
+}
