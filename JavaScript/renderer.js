@@ -2,6 +2,8 @@ let gl;
 let aPos;
 let uRes;
 let posBuff;
+let program;
+let image;
 function start()
 {
 	let canvas = document.querySelector("#canvas");
@@ -11,11 +13,15 @@ function start()
 		document.getElementById("test").innerHTML="web gl not available";
 		return;
 	}
-	var program=createShaderProgram(gl,basicVertex,basicFragment);
+	program=createShaderProgram(gl,basicVertex,basicFragment);
 	if(!program)
 	{
 		return;
 	}
+	resizeCanvasToDisplaySize(gl.canvas);
+}
+function draw()
+{
 	aPos=gl.getAttribLocation(program,"a_pos");
 	aTexCoord=gl.getAttribLocation(program,"a_texCoord");
 	uRes=gl.getUniformLocation(program,"u_res");
@@ -39,7 +45,6 @@ function start()
 //image
 	posBuff=gl.createBuffer();
 	gl.bindBuffer(gl.ARRAY_BUFFER,posBuff);
-	resizeCanvasToDisplaySize(gl.canvas);
 	gl.viewport(0,0,gl.canvas.width,gl.canvas.height);
 	gl.clearColor(0,0,0,1);
 	gl.clear(gl.COLOR_BUFFER_BIT);
