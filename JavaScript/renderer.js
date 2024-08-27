@@ -116,4 +116,4 @@ function setRectangle(gl,x,y,width,height)
 		]
 	),gl.STATIC_DRAW);
 }
-logMessage("Renderer Version: 0.0.1");
+logMessage("Renderer Version: 0.0.2");
