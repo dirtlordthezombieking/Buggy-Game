@@ -46,7 +46,7 @@ function logMessage(msg)
 function loadImage(src,finish)
 {
 	var image=new Image();
-	image.src="https://raw.githubusercontent.com/dirtlordthezombieking/Buggy-Game/+src";
+	image.src="https://raw.githubusercontent.com/dirtlordthezombieking/Buggy-Game/"+src;
 	image.onload=function()
 	{
 		finish(image);
