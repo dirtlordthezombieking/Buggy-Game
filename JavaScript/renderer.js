@@ -19,7 +19,7 @@ function start()
 		return;
 	}
 	resizeCanvasToDisplaySize(gl.canvas);
-	function loadImage(src,function(img)
+	function loadImage("images/stand in.png",function(img)
 	{
 		image=img;
 		draw();
