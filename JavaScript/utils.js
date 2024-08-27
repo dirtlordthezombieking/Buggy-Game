@@ -43,3 +43,12 @@ function logMessage(msg)
 {
 	document.getElementById("test").innerHTML=document.getElementById("test").innerHTML+"\n"+msg;
 }
+function loadImage(src,finish)
+{
+	var image=new Image();
+	image.src=src;
+	image.onload=function()
+	{
+		finish(image);
+	};
+}
