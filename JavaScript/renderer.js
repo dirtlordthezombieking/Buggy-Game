@@ -20,6 +20,7 @@ function start()
 	aPos=gl.getAttribLocation(program,"a_pos");
 	uRes=gl.getUniformLocation(program,"u_res");
 	posBuff=gl.createBuffer();
+	gl.bindBuffer(gl.ARRAY_BUFFER,posBuff);
 	resizeCanvasToDisplaySize(gl.canvas);
 	gl.viewport(0,0,gl.canvas.width,gl.canvas.height);
 	gl.clearColor(0,0,0,1);
