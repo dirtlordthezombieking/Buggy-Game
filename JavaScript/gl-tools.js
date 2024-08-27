@@ -8,15 +8,24 @@ function Uniform(uniformSize,glContext,shaderProgram,location, uniformValue)
 	this.set=function(newValue);
 	{
 		this.value=newValue;
-	}
+	};
 	this.use=function();
 	{
 		if(this.size==1)
 		{
-			
+			gl.uniform2f(this.loc,this.value[0]);
 		}
 		if(this.size==1)
+		{
+			gl.uniform2f(this.loc,this.value[0],this.value[1]);
+		}
 		if(this.size==1)
+		{
+			gl.uniform2f(this.loc,this.value[0],this.value[1],this.value[2]);
+		}
 		if(this.size==1)
-	}
+		{
+			gl.uniform2f(this.loc,this.value[0],this.value[1],this.value[2],this.value[3]);
+		}
+	}:
 }
