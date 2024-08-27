@@ -22,4 +22,4 @@ void main()
   vec2 clipSpace=zeroToTwo-1.0;
   gl_Position=vec4(clipSpace,0,1);
 }`
-logMessage("Basic Shader Version: 0.0.0");
+logMessage("Basic Shader Version: 0.0.1");
