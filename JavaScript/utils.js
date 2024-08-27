@@ -52,4 +52,4 @@ function loadImage(src,finish)
 		finish(image);
 	};
 }
-logMessage("Utils Version: 0.0.0")
+logMessage("Utils Version: 0.0.1");

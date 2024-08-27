@@ -1,4 +1,3 @@
-logMessage("Renderer Version: 0.0.0")
 let gl;
 let aPos;
 let uRes;
@@ -7,6 +6,7 @@ let program;
 let image;
 function start()
 {
+	logMessage("start started");
 	let canvas = document.querySelector("#canvas");
 	gl = canvas.getContext("webgl");
 	if(!gl)
@@ -20,20 +20,24 @@ function start()
 		return;
 	}
 	resizeCanvasToDisplaySize(gl.canvas);
+	logMessage("image load started");
 	loadImage("images/stand in.png",function(img)
 	{
 		image=img;
+		logMessage("image loaded");
 		draw();
 	});
 }
 function draw()
 {
+	logMessage("draw started");
 	aPos=gl.getAttribLocation(program,"a_pos");
 	aTexCoord=gl.getAttribLocation(program,"a_texCoord");
 	uRes=gl.getUniformLocation(program,"u_res");
 	let uColour = gl.getUniformLocation(program,"u_colour");
+	logMessage("values set");
 //texcord
-	texCoordBuffer = gl.createBuffer();
+	texCoordBuffer=gl.createBuffer();
 	gl.bindBuffer(gl.ARRAY_BUFFER,texCoordBuffer);
 	gl.bufferData(gl.ARRAY_BUFFER,new Float32Array
 	(
@@ -55,6 +59,7 @@ function draw()
 	gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.NEAREST);
 	gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MAG_FILTER,gl.NEAREST);
 	gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,gl.RGBA,gl.UNSIGNED_BYTE,image);
+	logMessage("image applied");
 //position
 	posBuff=gl.createBuffer();
 	gl.bindBuffer(gl.ARRAY_BUFFER,posBuff);
@@ -100,3 +105,4 @@ function setRectangle(gl,x,y,width,height)
 		]
 	),gl.STATIC_DRAW);
 }
+logMessage("Renderer Version: 0.0.1");
