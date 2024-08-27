@@ -45,11 +45,15 @@ function logMessage(msg)
 }
 function loadImage(src,finish)
 {
+	logMessage("load started");
 	var image=new Image();
+	logMessage("image created");
 	image.src="https://raw.githubusercontent.com/dirtlordthezombieking/Buggy-Game/"+src;
+	logMessage("data applied");
 	image.onload=function()
 	{
+		logMessage("image load successful");
 		finish(image);
 	};
 }
-logMessage("Utils Version: 0.0.1");
+logMessage("Utils Version: 0.0.2");
