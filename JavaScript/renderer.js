@@ -1,3 +1,4 @@
+logMessage(Renderer V0.0.0)
 let gl;
 let aPos;
 let uRes;
