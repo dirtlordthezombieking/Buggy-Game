@@ -1,4 +1,4 @@
-logMessage(Renderer V0.0.0)
+logMessage("Renderer Version: 0.0.0")
 let gl;
 let aPos;
 let uRes;
