@@ -1,8 +1,9 @@
-function Uniform(uniformSize,glContext,shaderProgram)
+function Uniform(uniformSize,glContext,shaderProgram,location,value)
 {
 	this.size=uniformSize;
 	this.gl=glContext;
-	this.program=shaderProgram;
+	this.prog=shaderProgram;
+	this.loc=gl.getUniformLocation(program,location);
 	this.set=function(value);
 	{
 		
