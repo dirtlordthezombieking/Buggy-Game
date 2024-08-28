@@ -78,7 +78,7 @@ function draw()
 	//for(var i=0;i<50;i++)
 	//{
 		setRectangle(gl,randomInt(300),randomInt(300),randomInt(300),randomInt(300));
-	 uColour=new Uniform(4,program,"u_colour",[Math.random(),Math.random(),Math.random(),1])
+	uColour=new Uniform(4,program,"u_colour",[Math.random(),Math.random(),Math.random(),1])
 	uColour.use()
 //	gl.uniform4f(uColour,Math.random(),Math.random(),Math.random(),1);
 		gl.drawArrays(gl.TRIANGLES,0,6);
