@@ -89,7 +89,7 @@ logMessage("Utils Version: 0.0.7");
 //}
 async function getTextData(src)
 {
-	const url=    "https://raw.githubusercontent.com/dirtlordthezombieking/Buggy-Game/main/"+src;
+	const url="https://raw.githubusercontent.com/dirtlordthezombieking/Buggy-Game/main/"+src;
 	try
 	{
 		const response=await fetch(url);
