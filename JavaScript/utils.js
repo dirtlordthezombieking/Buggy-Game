@@ -95,7 +95,7 @@ async function getTextData(src)
 		const response=await fetch(url);
 		if(!response.ok)
 		{
-			logMessage("Error: "+response.status);
+			throw new Error("Error: "+response.status);
 		}
 		const text = await response.text();
 		logMessage("loaded: "text);
