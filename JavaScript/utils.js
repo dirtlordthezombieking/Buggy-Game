@@ -64,7 +64,7 @@ function loadImage(src,finishImageLoad)
 		}
 	};
 }
-logMessage("Utils Version: 0.0.7");
+logMessage("Utils Version: 0.0.8 (0)");
 //testing
 //function loadScrip(src,onFinishAction)
 //{
@@ -87,21 +87,21 @@ logMessage("Utils Version: 0.0.7");
 //	document.body.appendChild(script);
 //	logMessage("add script");
 //}
-async function getTextData(src)
-{
-	const url="https://raw.githubusercontent.com/dirtlordthezombieking/Buggy-Game/main/"+src;
-	try
-	{
-		const response=await fetch(url);
-		if(!response.ok)
-		{
-			throw new Error("Error: "+response.status);
-		}
-		const text = await response.text();
-		logMessage("loaded: "text);
-	}
-	catch (e)
-	{
-		logMessage("Error: "+e.message);
-	}
-}
+//async function getTextData(src)
+//{
+//	const url="https://raw.githubusercontent.com/dirtlordthezombieking/Buggy-Game/main/"+src;
+//	try
+//	{
+//		const response=await fetch(url);
+//		if(!response.ok)
+//		{
+//			throw new Error("Error: "+response.status);
+//		}
+//		const text = await response.text();
+//		logMessage("loaded: "+text);
+//	}
+//	catch (e)
+//	{
+//		logMessage("Error: "+e.message);
+//	}
+//}
