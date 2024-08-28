@@ -1,0 +1,8 @@
+Meshes:[]
+	:{}
+		attr:[]
+			:{}
+				a_pos:3
+				a_normal:3
+				a_colour:4
+				a_UV:3
