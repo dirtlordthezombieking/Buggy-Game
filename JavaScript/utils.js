@@ -64,7 +64,7 @@ function loadImage(src,finishImageLoad)
 		}
 	};
 }
-logMessage("Utils Version: 0.0.8 (8)");
+logMessage("Utils Version: 0.0.8 (9)");
 //testing
 //function loadScrip(src,onFinishAction)
 //{
@@ -87,7 +87,7 @@ logMessage("Utils Version: 0.0.8 (8)");
 //	document.body.appendChild(script);
 //	logMessage("add script");
 //}
-async function getTextData(src)
+async function getTextData(src,onDone)
 {
 	const url="https://raw.githubusercontent.com/dirtlordthezombieking/Buggy-Game/main/"+src;
 	try
@@ -98,7 +98,8 @@ async function getTextData(src)
 			throw new Error("Error: "+response.status);
 		}
 		const text=await response.text();
-		logMessage("loaded: "+text);
+		//logMessage("loaded: "+text);
+		onDone(text);
 	}
 	catch (e)
 	{
