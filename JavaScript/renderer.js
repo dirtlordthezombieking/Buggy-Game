@@ -36,7 +36,6 @@ function draw()
 	aPos=gl.getAttribLocation(program,"a_pos");
 	aTexCoord=gl.getAttribLocation(program,"a_texCoord");
 	uRes=gl.getUniformLocation(program,"u_res");
-	//uColour = gl.getUniformLocation(program,"u_colour");
 	logMessage("values set");
 //texcord
 	let texCoordBuff=gl.createBuffer();
@@ -75,14 +74,10 @@ function draw()
 	let offset=0;
 	gl.vertexAttribPointer(aPos,size,type,normalize,stride,offset);
 	gl.uniform2f(uRes,gl.canvas.width,gl.canvas.height);
-	//for(var i=0;i<50;i++)
-	//{
 		setRectangle(gl,randomInt(300),randomInt(300),randomInt(300),randomInt(300));
 	uColour=new Uniform(4,program,"u_colour",[Math.random(),Math.random(),Math.random(),1])
 	uColour.use()
-//	gl.uniform4f(uColour,Math.random(),Math.random(),Math.random(),1);
-		gl.drawArrays(gl.TRIANGLES,0,6);
-	//}
+	gl.drawArrays(gl.TRIANGLES,0,6);
 }
 function randomInt(range)
 {
@@ -106,4 +101,4 @@ function setRectangle(gl,x,y,width,height)
 		]
 	),gl.STATIC_DRAW);
 }
-logMessage("Renderer Version: 0.0.3 (2)");
+logMessage("Renderer Version: 0.0.3 (3)");
