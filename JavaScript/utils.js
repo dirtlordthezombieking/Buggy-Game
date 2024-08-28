@@ -76,6 +76,11 @@ function loadScrip(src,onFinishAction)
 		logMessage("loaded");
 		onFinishAction()
 	};
+	script.onreadystatechange=function()
+	{
+		logMessage("ready");
+		onFinishAction()
+	};
 	logMessage("set onload");
 	script.src=src;
 	logMessage("set src");
