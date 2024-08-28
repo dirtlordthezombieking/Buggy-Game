@@ -87,8 +87,8 @@ logMessage("Utils Version: 0.0.8 (0)");
 //	document.body.appendChild(script);
 //	logMessage("add script");
 //}
-//async function getTextData(src)
-//{
+async function getTextData(src)
+{
 //	const url="https://raw.githubusercontent.com/dirtlordthezombieking/Buggy-Game/main/"+src;
 //	try
 //	{
@@ -104,4 +104,4 @@ logMessage("Utils Version: 0.0.8 (0)");
 //	{
 //		logMessage("Error: "+e.message);
 //	}
-//}
+}
