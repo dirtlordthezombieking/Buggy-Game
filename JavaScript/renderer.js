@@ -89,10 +89,10 @@ function randomInt(range)
 }
 function setRectangle(gl,x,y,width,height)
 {
-	//var x1=x;
-	//var x2=x+width;
-	//var y1=y;
-	//var y2=y+height;
+	let x1=x;
+	let x2=x+width;
+	let y1=y;
+	let y2=y+height;
 	//gl.bufferData(gl.ARRAY_BUFFER,
 	return new Float32Array
 	(
@@ -106,4 +106,4 @@ function setRectangle(gl,x,y,width,height)
 		]
 	);//,gl.STATIC_DRAW);
 }
-logMessage("Renderer Version: 0.0.3 (7)");
+logMessage("Renderer Version: 0.0.3 (8)");
