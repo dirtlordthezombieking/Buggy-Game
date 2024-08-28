@@ -26,6 +26,7 @@
 					logMessage("error:\n"+e.message);
 				}
 			}
+			document.body.onload=function(){
 			try
 			{
 				logMessage("loading test");
@@ -50,7 +51,7 @@
 			catch(e)
 			{
 				logMessage("error:\n"+e.message);
-			}
+			}}
 		</script>
 		<script src="JavaScript/renderer.js"></script>
 		<script src="shaders/basic.js"></script>
