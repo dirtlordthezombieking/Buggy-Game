@@ -43,7 +43,6 @@ function Texture(shaderProgram,location,imageSrc,referenceID)
 		gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.NEAREST);
 		gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MAG_FILTER,gl.NEAREST);
 		gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,gl.RGBA,gl.UNSIGNED_BYTE,this.image);
-		//textures.push(this.texture);
 	};
 	this.use=function()
 	{
@@ -67,4 +66,4 @@ function Attribute(attributeSize,shaderProgram,location, attributeValue)
 		gl.vertexAttribPointer(this.loc,this.size,gl.FLOAT,false,0,0);
 	};
 }
-logMessage("gl tools Version: 0.0.1 (3)");
+logMessage("gl tools Version: 0.0.2 (0)");
