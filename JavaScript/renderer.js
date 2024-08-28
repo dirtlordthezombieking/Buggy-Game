@@ -36,7 +36,7 @@ function draw()
 	aPos=gl.getAttribLocation(program,"a_pos");
 	aTexCoord=gl.getAttribLocation(program,"a_texCoord");
 	uRes=gl.getUniformLocation(program,"u_res");
-	uColour = gl.getUniformLocation(program,"u_colour");
+	//uColour = gl.getUniformLocation(program,"u_colour");
 	logMessage("values set");
 //texcord
 	let texCoordBuff=gl.createBuffer();
@@ -58,13 +58,6 @@ function draw()
 	let text=new Texture(program,"u_colourTexture",image,0);
 	text.push();
 	text.use();
-//	let texture=gl.createTexture();
-//	gl.bindTexture(gl.TEXTURE_2D,texture);
-//	gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_S,gl.CLAMP_TO_EDGE);
-//	gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_T,gl.CLAMP_TO_EDGE);
-//	gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.NEAREST);
-//	gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MAG_FILTER,gl.NEAREST);
-//	gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,gl.RGBA,gl.UNSIGNED_BYTE,image);
 	logMessage("image applied");
 //position
 	posBuff=gl.createBuffer();
@@ -85,7 +78,9 @@ function draw()
 	//for(var i=0;i<50;i++)
 	//{
 		setRectangle(gl,randomInt(300),randomInt(300),randomInt(300),randomInt(300));
-	gl.uniform4f(uColour,Math.random(),Math.random(),Math.random(),1);
+	uColour=new Uniform(4,program,"u_colour",[Math.random(),Math.random(),Math.random(),1])
+	uColour.use()
+//	gl.uniform4f(uColour,Math.random(),Math.random(),Math.random(),1);
 		gl.drawArrays(gl.TRIANGLES,0,6);
 	//}
 }
@@ -111,4 +106,4 @@ function setRectangle(gl,x,y,width,height)
 		]
 	),gl.STATIC_DRAW);
 }
-logMessage("Renderer Version: 0.0.3 (1)");
+logMessage("Renderer Version: 0.0.3 (2)");
