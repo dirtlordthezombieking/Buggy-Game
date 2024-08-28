@@ -35,7 +35,7 @@ function draw()
 	logMessage("draw started");
 	aPos=gl.getAttribLocation(program,"a_pos");
 	aTexCoord=gl.getAttribLocation(program,"a_texCoord");
-	uRes=gl.getUniformLocation(program,"u_res");
+	//uRes=gl.getUniformLocation(program,"u_res");
 	logMessage("values set");
 //texcord
 	let texCoordBuff=gl.createBuffer();
@@ -73,7 +73,9 @@ function draw()
 	let stride=0;
 	let offset=0;
 	gl.vertexAttribPointer(aPos,size,type,normalize,stride,offset);
-	gl.uniform2f(uRes,gl.canvas.width,gl.canvas.height);
+	uRes=new Uniform(2,program,"u_res",[gl.canvas.width,gl.canvas.height])
+	uRes()
+	//gl.uniform2f(uRes,gl.canvas.width,gl.canvas.height);
 		setRectangle(gl,randomInt(300),randomInt(300),randomInt(300),randomInt(300));
 	uColour=new Uniform(4,program,"u_colour",[Math.random(),Math.random(),Math.random(),1])
 	uColour.use()
