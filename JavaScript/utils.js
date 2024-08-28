@@ -64,7 +64,7 @@ function loadImage(src,finishImageLoad)
 		}
 	};
 }
-logMessage("Utils Version: 0.0.8 (0)");
+logMessage("Utils Version: 0.0.8 (1)");
 //testing
 //function loadScrip(src,onFinishAction)
 //{
