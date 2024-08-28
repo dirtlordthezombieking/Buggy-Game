@@ -98,7 +98,7 @@ async function getTextData(src)
 			throw new Error("Error: "+response.status);
 		}
 		const text = await response.text();
-		logMessage("loaded: "text);
+		logMessage("loaded: "+text);
 	}
 	catch (e)
 	{
