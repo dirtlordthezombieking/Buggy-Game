@@ -56,7 +56,7 @@ function Attribute(attributeSize,shaderProgram,location, attributeValue)
 {
 	this.size=attributeSize;
 	this.prog=shaderProgram;
-	this.loc=gl.getAtribLocation(shaderProgram,location);
+	this.loc=gl.getAttribLocation(shaderProgram,location);
 	this.value=attributeValue;
 	this.use=function()
 	{
@@ -67,4 +67,4 @@ function Attribute(attributeSize,shaderProgram,location, attributeValue)
 		gl.vertexAttribPointer(this.loc,this.size,gl.FLOAT,false,0,0);
 	};
 }
-logMessage("gl tools Version: 0.0.1 (2)");
+logMessage("gl tools Version: 0.0.1 (3)");
