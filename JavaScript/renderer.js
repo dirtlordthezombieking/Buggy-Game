@@ -40,7 +40,7 @@ function draw()
 	//let texCoordBuff=gl.createBuffer();
 	//gl.bindBuffer(gl.ARRAY_BUFFER,texCoordBuff);
 	//gl.bufferData(gl.ARRAY_BUFFER,
-	let aTexCoord=Attribute(2,program,"a_texCoord",new Float32Array
+	let aTexCoord=new Attribute(2,program,"a_texCoord",new Float32Array
 	(
 		[
 			0.0,0.0,
@@ -104,4 +104,4 @@ function setRectangle(gl,x,y,width,height)
 		]
 	),gl.STATIC_DRAW);
 }
-logMessage("Renderer Version: 0.0.3 (4)");
+logMessage("Renderer Version: 0.0.3 (5)");
