@@ -12,19 +12,19 @@ function Uniform(uniformSize,shaderProgram,location,uniformValue)
 	{
 		if(this.size==1)
 		{
-			gl.uniform2f(this.loc,this.value[0]);
+			gl.uniform1f(this.loc,this.value[0]);
 		}
-		else if(this.size==1)
+		else if(this.size==2)
 		{
 			gl.uniform2f(this.loc,this.value[0],this.value[1]);
 		}
-		else if(this.size==1)
+		else if(this.size==3)
 		{
-			gl.uniform2f(this.loc,this.value[0],this.value[1],this.value[2]);
+			gl.uniform3f(this.loc,this.value[0],this.value[1],this.value[2]);
 		}
-		else if(this.size==1)
+		else if(this.size==4)
 		{
-			gl.uniform2f(this.loc,this.value[0],this.value[1],this.value[2],this.value[3]);
+			gl.uniform4f(this.loc,this.value[0],this.value[1],this.value[2],this.value[3]);
 		}
 	};
 }
@@ -67,4 +67,4 @@ function Attribute(attributeSize,shaderProgram,location, attributeValue)
 		gl.vertexAttribPointer(this.loc,this.size,gl.FLOAT,false,0,0);
 	};
 }
-logMessage("gl tools Version: 0.0.1 (1)");
+logMessage("gl tools Version: 0.0.1 (2)");
