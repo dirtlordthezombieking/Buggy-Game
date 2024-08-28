@@ -64,7 +64,7 @@ function loadImage(src,finishImageLoad)
 		}
 	};
 }
-logMessage("Utils Version: 0.0.8 (2)");
+logMessage("Utils Version: 0.0.8 (3)");
 //testing
 //function loadScrip(src,onFinishAction)
 //{
@@ -89,7 +89,7 @@ logMessage("Utils Version: 0.0.8 (2)");
 //}
 async function getTextData(src)
 {
-//	const url="https://raw.githubusercontent.com/dirtlordthezombieking/Buggy-Game/main/"+src;
+	const url="https://raw.githubusercontent.com/dirtlordthezombieking/Buggy-Game/main/"+src;
 	try
 	{
 //		const response=await fetch(url);
