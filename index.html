@@ -14,7 +14,7 @@
 		<p id="test" style="white-space:pre;">log...</p>
 		<script src="JavaScript/utils.js"></script>
 		<script>
-			logMessage("Page Version: 0.0.2 (0)");
+			logMessage("Page Version: 0.0.2 (1)");
 			function doTheThing()
 			{
 				try
@@ -30,7 +30,10 @@
 			try
 			{
 				logMessage("loading test");
-				getTextData("models/string test.txt");
+				getTextData("models/string test.txt",function(txt)
+				{
+					logMessage(txt);
+				});
 			}
 			catch(e)
 			{
