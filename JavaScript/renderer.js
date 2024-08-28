@@ -55,9 +55,9 @@ function draw()
 	gl.enableVertexAttribArray(aTexCoord);
 	gl.vertexAttribPointer(aTexCoord,2,gl.FLOAT,false,0,0);
 //texture
-	let texture=new texture(program,"u_colourTexture",image,0)
-	texture.push();
-	texture.use();
+	let text=new Texture(program,"u_colourTexture",image,0);
+	text.push();
+	text.use();
 //	let texture=gl.createTexture();
 //	gl.bindTexture(gl.TEXTURE_2D,texture);
 //	gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_S,gl.CLAMP_TO_EDGE);
@@ -111,4 +111,4 @@ function setRectangle(gl,x,y,width,height)
 		]
 	),gl.STATIC_DRAW);
 }
-logMessage("Renderer Version: 0.0.3 (0)");
+logMessage("Renderer Version: 0.0.3 (1)");

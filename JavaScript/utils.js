@@ -46,7 +46,7 @@ function logMessage(msg)
 function loadImage(src,finishImageLoad)
 {
 	logMessage("load started");
-	var image=new Image();
+	let image=new Image();
 	logMessage("image created");
 	image.src=//"https://raw.githubusercontent.com/dirtlordthezombieking/Buggy-Game/main/"+
 	src;
@@ -64,7 +64,7 @@ function loadImage(src,finishImageLoad)
 		}
 	};
 }
-logMessage("Utils Version: 0.0.8 (9)");
+logMessage("Utils Version: 0.0.9 (0)");
 //testing
 //function loadScrip(src,onFinishAction)
 //{
