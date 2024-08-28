@@ -28,7 +28,7 @@ function Uniform(uniformSize,shaderProgram,location,uniformValue)
 		}
 	};
 }
-function texture(shaderProgram,location,imageSrc, referenceID)
+function texture(shaderProgram,location,imageSrc,referenceID)
 {
 	this.prog=shaderProgram;
 	this.image=imageSrc;
@@ -67,3 +67,4 @@ function Attribute(attributeSize,shaderProgram,location, attributeValue)
 		gl.vertexAttribPointer(this.loc,this.size,gl.FLOAT,false,0,0);
 	};
 }
+logMessage("gl tools Version: 0.0.0");
