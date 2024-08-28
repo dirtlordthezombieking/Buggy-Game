@@ -64,7 +64,7 @@ function loadImage(src,finishImageLoad)
 		}
 	};
 }
-logMessage("Utils Version: 0.0.8 (6)");
+logMessage("Utils Version: 0.0.8 (7)");
 //testing
 //function loadScrip(src,onFinishAction)
 //{
@@ -97,7 +97,7 @@ async function getTextData(src)
 		{
 			throw new Error("Error: "+response.status);
 		}
-//		const text = await response.text();
+		const text=await response.text();
 //		logMessage("loaded: "+text);
 	}
 	catch (e)
