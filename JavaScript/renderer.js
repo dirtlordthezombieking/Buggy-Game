@@ -74,7 +74,7 @@ function draw()
 	let offset=0;
 	gl.vertexAttribPointer(aPos,size,type,normalize,stride,offset);
 	uRes=new Uniform(2,program,"u_res",[gl.canvas.width,gl.canvas.height])
-	uRes()
+	uRes.use()
 	//gl.uniform2f(uRes,gl.canvas.width,gl.canvas.height);
 		setRectangle(gl,randomInt(300),randomInt(300),randomInt(300),randomInt(300));
 	uColour=new Uniform(4,program,"u_colour",[Math.random(),Math.random(),Math.random(),1])
