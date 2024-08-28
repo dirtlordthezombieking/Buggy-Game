@@ -80,4 +80,4 @@ function setRectangle(gl,x,y,width,height)
 		]
 	);
 }
-logMessage("Renderer Version: 0.0.3 (8)");
+logMessage("Renderer Version: 0.0.4 (0)");
