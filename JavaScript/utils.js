@@ -45,15 +45,11 @@ function logMessage(msg)
 }
 function loadImage(src,finishImageLoad)
 {
-	logMessage("load started");
 	let image=new Image();
-	logMessage("image created");
 	image.src=//"https://raw.githubusercontent.com/dirtlordthezombieking/Buggy-Game/main/"+
 	src;
-	logMessage("data applied");
 	image.onload=function()
 	{
-		logMessage("image load successful");
 		try
 		{
 			finishImageLoad(image);
@@ -64,29 +60,6 @@ function loadImage(src,finishImageLoad)
 		}
 	};
 }
-logMessage("Utils Version: 0.0.9 (0)");
-//testing
-//function loadScrip(src,onFinishAction)
-//{
-//	logMessage("start load");
-//	let script=document.createElement('script');
-//	logMessage("create tag");
-//	script.onload=function()
-//	{
-//		logMessage("loaded");
-//		onFinishAction()
-//	};
-//	script.onreadystatechange=function()
-//	{
-//		logMessage("ready");
-//		onFinishAction()
-//	};
-//	logMessage("set onload");
-//	script.src=src;
-//	logMessage("set src");
-//	document.body.appendChild(script);
-//	logMessage("add script");
-//}
 async function getTextData(src,onDone)
 {
 	const url="https://raw.githubusercontent.com/dirtlordthezombieking/Buggy-Game/main/"+src;
@@ -98,7 +71,6 @@ async function getTextData(src,onDone)
 			throw new Error("Error: "+response.status);
 		}
 		const text=await response.text();
-		//logMessage("loaded: "+text);
 		onDone(text);
 	}
 	catch (e)
@@ -106,3 +78,4 @@ async function getTextData(src,onDone)
 		logMessage("Error: "+e.message);
 	}
 }
+logMessage("Utils Version: 0.0.10 (0)");
