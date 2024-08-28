@@ -2,7 +2,7 @@ function Uniform(uniformSize,shaderProgram,location,uniformValue)
 {
 	this.size=uniformSize;
 	this.prog=shaderProgram;
-	this.loc=gl.getUniformLocation(program,location);
+	this.loc=gl.getUniformLocation(shaderProgram,location);
 	this.value=uniformValue;
 	this.set=function(newValue)
 	{
@@ -32,9 +32,9 @@ function Texture(shaderProgram,location,imageSrc,referenceID)
 {
 	this.prog=shaderProgram;
 	this.image=imageSrc;
-	this.loc=gl.getUniformLocation(program,location);
+	this.loc=gl.getUniformLocation(shaderProgram,location);
 	this.id=referenceID;
-	this.push=function(pos)
+	this.push=function()
 	{
 		this.texture=gl.createTexture();
 		gl.bindTexture(gl.TEXTURE_2D,this.texture);
@@ -43,12 +43,12 @@ function Texture(shaderProgram,location,imageSrc,referenceID)
 		gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.NEAREST);
 		gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MAG_FILTER,gl.NEAREST);
 		gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,gl.RGBA,gl.UNSIGNED_BYTE,this.image);
-		textures.push(this.texture);
+		//textures.push(this.texture);
 	};
 	this.use=function()
 	{
-		gl.uniform1i(u_image,id);
-		gl.activeTexture(gl.TEXTURE0+id);
+		gl.uniform1i(this.loc,this.id);
+		gl.activeTexture(gl.TEXTURE0+this.id);
 		gl.bindTexture(gl.TEXTURE_2D,this.texture);
 	};
 }
@@ -56,15 +56,15 @@ function Attribute(attributeSize,shaderProgram,location, attributeValue)
 {
 	this.size=attributeSize;
 	this.prog=shaderProgram;
-	this.loc=gl.getAtribLocation(program,location);
+	this.loc=gl.getAtribLocation(shaderProgram,location);
 	this.value=attributeValue;
 	this.use=function()
 	{
-		this.buff=gl.createBuffer();
+		let buff=gl.createBuffer();
 		gl.bindBuffer(gl.ARRAY_BUFFER,buff);
 		gl.bufferData(gl.ARRAY_BUFFER,this.value,gl.STATIC_DRAW);
 		gl.enableVertexAttribArray(this.loc);
 		gl.vertexAttribPointer(this.loc,this.size,gl.FLOAT,false,0,0);
 	};
 }
-logMessage("gl tools Version: 0.0.1 (0)");
+logMessage("gl tools Version: 0.0.1 (1)");
