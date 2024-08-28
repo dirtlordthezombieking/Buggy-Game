@@ -34,13 +34,13 @@ function draw()
 {
 	logMessage("draw started");
 	aPos=gl.getAttribLocation(program,"a_pos");
-	aTexCoord=gl.getAttribLocation(program,"a_texCoord");
-	//uRes=gl.getUniformLocation(program,"u_res");
+	//aTexCoord=gl.getAttribLocation(program,"a_texCoord");
 	logMessage("values set");
 //texcord
-	let texCoordBuff=gl.createBuffer();
-	gl.bindBuffer(gl.ARRAY_BUFFER,texCoordBuff);
-	gl.bufferData(gl.ARRAY_BUFFER,new Float32Array
+	//let texCoordBuff=gl.createBuffer();
+	//gl.bindBuffer(gl.ARRAY_BUFFER,texCoordBuff);
+	//gl.bufferData(gl.ARRAY_BUFFER,
+	let aTexCoord=Attribute(2,program,"a_texCoord",new Float32Array
 	(
 		[
 			0.0,0.0,
@@ -50,9 +50,11 @@ function draw()
 			1.0,0.0,
 			1.0,1.0
 		]
-	),gl.STATIC_DRAW);
-	gl.enableVertexAttribArray(aTexCoord);
-	gl.vertexAttribPointer(aTexCoord,2,gl.FLOAT,false,0,0);
+	));
+	aTexCoord.use();
+//,gl.STATIC_DRAW);
+	//gl.enableVertexAttribArray(aTexCoord);
+	//gl.vertexAttribPointer(aTexCoord,2,gl.FLOAT,false,0,0);
 //texture
 	let text=new Texture(program,"u_colourTexture",image,0);
 	text.push();
@@ -75,7 +77,6 @@ function draw()
 	gl.vertexAttribPointer(aPos,size,type,normalize,stride,offset);
 	uRes=new Uniform(2,program,"u_res",[gl.canvas.width,gl.canvas.height])
 	uRes.use()
-	//gl.uniform2f(uRes,gl.canvas.width,gl.canvas.height);
 		setRectangle(gl,randomInt(300),randomInt(300),randomInt(300),randomInt(300));
 	uColour=new Uniform(4,program,"u_colour",[Math.random(),Math.random(),Math.random(),1])
 	uColour.use()
@@ -103,4 +104,4 @@ function setRectangle(gl,x,y,width,height)
 		]
 	),gl.STATIC_DRAW);
 }
-logMessage("Renderer Version: 0.0.3 (3)");
+logMessage("Renderer Version: 0.0.3 (4)");
