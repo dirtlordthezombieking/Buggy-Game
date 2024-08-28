@@ -55,7 +55,7 @@ function draw()
 	gl.enableVertexAttribArray(aTexCoord);
 	gl.vertexAttribPointer(aTexCoord,2,gl.FLOAT,false,0,0);
 //texture
-	let text=new Texture
+	let texture=new texture(program,location,image,0)
 //	let texture=gl.createTexture();
 //	gl.bindTexture(gl.TEXTURE_2D,texture);
 //	gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_S,gl.CLAMP_TO_EDGE);
