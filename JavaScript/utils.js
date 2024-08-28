@@ -66,24 +66,42 @@ function loadImage(src,finishImageLoad)
 }
 logMessage("Utils Version: 0.0.7");
 //testing
-function loadScrip(src,onFinishAction)
+//function loadScrip(src,onFinishAction)
+//{
+//	logMessage("start load");
+//	let script=document.createElement('script');
+//	logMessage("create tag");
+//	script.onload=function()
+//	{
+//		logMessage("loaded");
+//		onFinishAction()
+//	};
+//	script.onreadystatechange=function()
+//	{
+//		logMessage("ready");
+//		onFinishAction()
+//	};
+//	logMessage("set onload");
+//	script.src=src;
+//	logMessage("set src");
+//	document.body.appendChild(script);
+//	logMessage("add script");
+//}
+async function getTextData(src)
 {
-	logMessage("start load");
-	let script=document.createElement('script');
-	logMessage("create tag");
-	script.onload=function()
+	const url=;
+	try
 	{
-		logMessage("loaded");
-		onFinishAction()
-	};
-	script.onreadystatechange=function()
+		const response=await fetch(url);
+		if(!response.ok)
+		{
+			logMessage("Error: "+response.status);
+		}
+		const text = await response.text();
+		logMessage("loaded: "text);
+	}
+	catch (e)
 	{
-		logMessage("ready");
-		onFinishAction()
-	};
-	logMessage("set onload");
-	script.src=src;
-	logMessage("set src");
-	document.body.appendChild(script);
-	logMessage("add script");
+		logMessage("Error: "+e.message);
+	}
 }
