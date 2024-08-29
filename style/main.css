@@ -5,8 +5,6 @@ div
 }
 body
 {
-	width:100%;
-	height:500%;
 	margin:0;
 	padding:0;
 	background-image:url(../images/back_dimer.png);
@@ -17,7 +15,6 @@ body
 {
 	border-radius:50%;
 	width:20%!important;
-	border:0;
 }
 .header
 {
@@ -33,6 +30,7 @@ body
 {
 	width:100%;
 	color:#ffffff;
+	top:200px;
 	text-shadow: 0 0 2px #000;
 	text-align:center;
 }
@@ -43,7 +41,7 @@ body
 {
 	white-space:nowrap;
 	color:#ffffff;
-	left:120px;
+	left:60px;
 	font-size:120px;
 	text-shadow: 0 0 4px #000;
 }
