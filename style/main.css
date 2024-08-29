@@ -1,0 +1,48 @@
+div
+{
+	margin:0;
+	padding:0;
+}
+body
+{
+	overflow:hidden;
+	width:100%;
+	height:100%;
+}
+.logo
+{
+	border-radius: 50%;
+	width: 100% !important;
+}
+.header
+{
+	overflow:auto;
+	position:absolute;
+	width:100%;
+	height:200px;
+	background-image:url("images/back_brighter.png");
+	background-repeat:repeat;
+}
+.main
+{
+	overflow:auto;
+	position:absolute;
+	width:100%;
+	top:200px;
+	bottom:0;
+	text-align:center;
+	background-image:url("images/back_dimer.png");
+	background-repeat:repeat;
+}
+.holderone
+{
+	display:inline;
+}
+.holdertwo
+{
+	display:inline;
+	white-space:nowrap;
+	color:#ffffff;
+	font-size:60px;
+	text-shadow: 0 0 4px #000;
+}
