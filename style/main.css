@@ -9,14 +9,19 @@ body
 	width:100%;
 	height:100%;
 }
-#header
+.logo
+{
+	border-radius: 50%;
+	width: 100% !important;
+}
+.header
 {
 	overflow:auto;
 	position:absolute;
 	width:100%;
 	height:200px
 }
-#main
+.main
 {
 	overflow:auto;
 	position:absolute;
