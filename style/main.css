@@ -16,6 +16,7 @@ body
 {
 	border-radius:50%;
 	width:20%!important;
+	object-fit:cover;
 }
 .header
 {
@@ -37,6 +38,9 @@ body
 }
 .holderone
 {
+	display:flex;
+	align-items:center;
+	
 }
 .holdertwo
 {
