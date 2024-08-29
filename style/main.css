@@ -18,7 +18,7 @@ body
 }
 .header
 {
-	position:fixed;
+	position:sticky;
 	top:0;
 	width:100%;
 	background-image:url(../images/back_brighter.png);
@@ -31,6 +31,8 @@ body
 	width:100%;
 	top:200px;
 	bottom:0;
+	color:#ffffff;
+	text-shadow: 0 0 2px #000;
 	text-align:center;
 	background-image:url(../images/back_dimer.png);
 	background-repeat:repeat;
@@ -46,4 +48,7 @@ body
 	color:#ffffff;
 	font-size:60px;
 	text-shadow: 0 0 4px #000;
+	top: 50%;
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
 }
