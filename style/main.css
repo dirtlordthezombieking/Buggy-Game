@@ -6,11 +6,12 @@ div
 body
 {
 	width:100%;
-	height:500;
+	height:500%;
 	margin:0;
 	padding:0;
 	background-image:url(../images/back_dimer.png);
 	background-repeat:repeat;
+	overflow:unset;
 }
 .logo
 {
@@ -20,10 +21,12 @@ body
 }
 .header
 {
-	position:sticky;
+	position:fixed;
 	top:0;
 	width:100%;
+	height:200px;
 	background-image:url(../images/back_brighter.png);
+	align-self:flex-start;
 	background-repeat:repeat;
 }
 .main
@@ -40,9 +43,7 @@ body
 {
 	white-space:nowrap;
 	color:#ffffff;
-	font-size:60px;
+	left:120px;
+	font-size:120px;
 	text-shadow: 0 0 4px #000;
-	top: 50%;
-	-ms-transform: translateY(-50%);
-	transform: translateY(-50%);
 }
