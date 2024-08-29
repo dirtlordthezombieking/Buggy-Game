@@ -34,3 +34,12 @@ body
 	background-image:url("images/back_dimer.png");
 	background-repeat:repeat;
 }
+.holderone
+{
+	display:inline;
+}
+.holdertwo
+{
+	display:inline;
+	white-space:nowrap;
+}
