@@ -15,7 +15,7 @@ body
 .logo
 {
 	border-radius:50%;
-	width:20%!important;
+	width:100%!important;
 	object-fit:cover;
 }
 .header
