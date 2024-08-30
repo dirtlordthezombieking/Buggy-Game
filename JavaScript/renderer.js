@@ -1,5 +1,4 @@
 let gl;
-let program;
 function start()
 {
 	let canvas = document.querySelector("#canvas");
@@ -9,7 +8,7 @@ function start()
 		document.getElementById("test").innerHTML="web gl not available";
 		return;
 	}
-	program=createShaderProgram(gl,basicVertex,basicFragment);
+	let program=createShaderProgram(gl,basicVertex,basicFragment);
 	if(!program)
 	{
 		return;
