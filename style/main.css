@@ -58,5 +58,6 @@ body
 }
 .textscale
 {
+	white-space:pre;
 	font-size:150%;
 }
