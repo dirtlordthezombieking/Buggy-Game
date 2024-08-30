@@ -1,10 +1,5 @@
 let gl;
-let aPos;
-let aTexCoord;
-let uColour;
-let uRes;
 let program;
-let image;
 function start()
 {
 	let canvas = document.querySelector("#canvas");
