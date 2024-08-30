@@ -1,5 +1,10 @@
 function GLTest001
 {
+	this.aPos;
+	this.aTexCoord;
+	this.uColour;
+	this.uRes;
+	this image;
 	function Start
 	loadImage("images/stand in.png",function(img)
 	{
