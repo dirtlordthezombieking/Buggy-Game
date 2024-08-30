@@ -31,21 +31,21 @@ function GLTest001(shaderProgram,GLCore)
 		));
 		this.aTexCoord.use();
 //texture
-		this.text=new Texture(program,"u_colourTexture",image,0);
+		this.text=new Texture(this program,"u_colourTexture",this.image,0);
 		this.text.push();
 		this.text.use();
 //position
 		this.gl.viewport(0,0,this.gl.canvas.width,this.gl.canvas.height);
 		this.gl.clearColor(0,0,0,1);
-		this.gl.clear(gl.COLOR_BUFFER_BIT);
-		this.gl.useProgram(program);
-		this.uRes=new Uniform(2,program,"u_res",[gl.canvas.width,gl.canvas.height]);
+		this.gl.clear(this.gl.COLOR_BUFFER_BIT);
+		this.gl.useProgram(this.program);
+		this.uRes=new Uniform(2,this.program,"u_res",[this.gl.canvas.width,this.gl.canvas.height]);
 		this.uRes.use();
-		this.aPos=new Attribute(2,this.program,"a_pos",this.setRectangle(gl,this.randomInt(300),this.randomInt(300),this.randomInt(300),this.randomInt(300)));
+		this.aPos=new Attribute(2,this.program,"a_pos",this.setRectangle(this.gl,this.randomInt(300),this.randomInt(300),this.randomInt(300),this.randomInt(300)));
 		this.aPos.use();
-		this.uColour=new Uniform(4,program,"u_colour",[Math.random(),Math.random(),Math.random(),1]);
+		this.uColour=new Uniform(4,this.program,"u_colour",[Math.random(),Math.random(),Math.random(),1]);
 		this.uColour.use();
-		this.gl.drawArrays(gl.TRIANGLES,0,6);
+		this.gl.drawArrays(this.gl.TRIANGLES,0,6);
 	};
 	this.randomInt=function(range)
 	{
