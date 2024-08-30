@@ -8,12 +8,12 @@ function GLTest001(shaderProgram,glCore)
 	this.text=0;
 	this.program=shaderProgram;
 	this.gl=glCore;
-	this.start=function()
+	this.start=function(test)
 	{
 		loadImage("images/stand in.png",function(img)
 		{
-			this.image=img;
-			this.draw();
+			test.image=img;
+			test.draw();
 		});
 	};
 	this.draw=function()
