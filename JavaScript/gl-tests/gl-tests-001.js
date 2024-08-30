@@ -35,13 +35,13 @@ function GLTest001(shaderProgram,GLCore)
 		this.text.push();
 		this.text.use();
 //position
-		this.gl.viewport(0,0,gl.canvas.width,gl.canvas.height);
+		this.gl.viewport(0,0,this.gl.canvas.width,this.gl.canvas.height);
 		this.gl.clearColor(0,0,0,1);
 		this.gl.clear(gl.COLOR_BUFFER_BIT);
 		this.gl.useProgram(program);
 		this.uRes=new Uniform(2,program,"u_res",[gl.canvas.width,gl.canvas.height]);
 		this.uRes.use();
-		this.aPos=new Attribute(2,program,"a_pos",this.setRectangle(gl,this.randomInt(300),this.randomInt(300),this.randomInt(300),this.randomInt(300)));
+		this.aPos=new Attribute(2,this.program,"a_pos",this.setRectangle(gl,this.randomInt(300),this.randomInt(300),this.randomInt(300),this.randomInt(300)));
 		this.aPos.use();
 		this.uColour=new Uniform(4,program,"u_colour",[Math.random(),Math.random(),Math.random(),1]);
 		this.uColour.use();
