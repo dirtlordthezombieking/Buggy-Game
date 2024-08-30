@@ -41,7 +41,7 @@ function resizeCanvasToDisplaySize(canvas)
 }
 function logMessage(msg)
 {
-	document.getElementById("test").innerHTML=document.getElementById("test").innerHTML+"\n"+msg;
+	document.getElementById("log").innerHTML=document.getElementById("log").innerHTML+"\n"+msg;
 }
 function loadImage(src,finishImageLoad)
 {
