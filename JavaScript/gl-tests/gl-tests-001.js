@@ -9,6 +9,7 @@ function GLTest001(shaderProgram,glCore)
 	this.program=shaderProgram;
 	this.gl=glCore;
 	this.start=function()
+	{
 		loadImage("images/stand in.png",function(img)
 		{
 			this.image=img;
@@ -31,7 +32,7 @@ function GLTest001(shaderProgram,glCore)
 		));
 		this.aTexCoord.use();
 //texture
-		this.text=new Texture(this program,"u_colourTexture",this.image,0);
+		this.text=new Texture(this.program,"u_colourTexture",this.image,0);
 		this.text.push();
 		this.text.use();
 //position
