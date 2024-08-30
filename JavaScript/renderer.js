@@ -15,6 +15,6 @@ function start()
 	}
 	resizeCanvasToDisplaySize(gl.canvas);
 	let test=new GLTest001(program,gl);
-	test.start
+	test.start();
 }
 logMessage("Renderer Version: 0.0.5 (0)");
