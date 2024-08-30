@@ -1,4 +1,4 @@
-function GLTest001(shaderProgram,GLCore)
+function GLTest001(shaderProgram,glCore)
 {
 	this.aPos=0;
 	this.aTexCoord=0;
@@ -7,7 +7,7 @@ function GLTest001(shaderProgram,GLCore)
 	this.image=0;
 	this.text=0;
 	this.program=shaderProgram;
-	this.gl=GLCore;
+	this.gl=glCore;
 	this.start=function()
 		loadImage("images/stand in.png",function(img)
 		{
