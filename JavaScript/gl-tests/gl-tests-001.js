@@ -18,7 +18,7 @@ function GLTest001(shaderProgram,GLCore)
 	this.draw=function()
 	{
 //texcord
-		this.aTexCoord=new Attribute(2,program,"a_texCoord",new Float32Array
+		this.aTexCoord=new Attribute(2,this.program,"a_texCoord",new Float32Array
 		(
 			[
 				0.0,0.0,
