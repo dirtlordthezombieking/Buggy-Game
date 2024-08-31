@@ -56,9 +56,9 @@ function GLTest001(shaderProgram,glCore)
 		logMessage("007");
 		this.uTransform.update();
 		logMessage("008");
-		this.uTransform.setData("u_transform");
+		this.uTransform.setData(program,"u_transform",gl);
 		logMessage("008");
-		this.uTransform.use();
+		this.uTransform.use(gl);
 		logMessage("009");
 		this.aPos=new Attribute(2,this.program,"a_pos",this.setRectangle(-100,-100,200,200),this.gl);
 		logMessage("010");
