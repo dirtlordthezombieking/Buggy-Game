@@ -18,7 +18,9 @@ uniform mat3 u_transform;
 void main()
 {
   v_texCoord=a_texCoord;
-  vec2 pos=(((u_transform*vec3(a_pos,1)).xy)/u_res)*2.0;
-  gl_Position=vec4(pos,0,1);
+  vec2 post=(u_transform*vec3(a_pos,1)).xy;
+  vec2 poss=post/u_res;
+  vec3 posa=poss/2.0;
+  gl_Position=vec4(posa,0,1);
 }`
 logMessage("Basic Shader Version: 0.0.4 (0)");
