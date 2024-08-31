@@ -47,7 +47,7 @@ function GLTest001(shaderProgram,glCore)
 		this.uTransform.setScale(0.75,0.5);
 		this.uTransform.setRotation(45.0);
 		this.uTransform.setTranslation(100.0,0.0);
-		this.uTransform.update():
+		this.uTransform.update();
 		this.uTransform.setData("u_transform");
 		this.uTransform.use();
 		this.aPos=new Attribute(2,this.program,"a_pos",this.setRectangle(-100,-100,200,200),this.gl);
