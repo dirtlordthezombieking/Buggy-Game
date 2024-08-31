@@ -50,7 +50,7 @@ function GLTest001(shaderProgram,glCore)
 		this.uTransform.update():
 		this.uTransform.setData("u_transform");
 		this.uTransform.use();
-		this.aPos=new Attribute(2,this.program,"a_pos",this.setRectangle(50,50,200,200),this.gl);
+		this.aPos=new Attribute(2,this.program,"a_pos",this.setRectangle(-100,-100,200,200),this.gl);
 //this.randomInt(300),this.randomInt(300),this.randomInt(300),this.randomInt(300)));
 		this.aPos.use();
 		this.uColour=new Uniform(4,this.program,"u_colour",[0,1,1,1],this.gl);
