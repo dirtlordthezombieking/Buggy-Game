@@ -18,7 +18,7 @@ uniform vec2 u_translation;
 void main()
 {
   v_texCoord=a_texCoord;
-	vec2 pos=a_pos.xy+u_translation;
+  vec2 pos=a_pos.xy+u_translation;
   vec2 zeroToOne=pos/u_res;
   vec2 zeroToTwo=zeroToOne*2.0;
   vec2 clipSpace=zeroToTwo-1.0;
