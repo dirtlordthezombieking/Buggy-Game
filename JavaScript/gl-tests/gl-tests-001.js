@@ -43,7 +43,7 @@ function GLTest001(shaderProgram,glCore)
 		this.gl.useProgram(this.program);
 		this.uRes=new Uniform(2,this.program,"u_res",[this.gl.canvas.width,this.gl.canvas.height],this.gl);
 		this.uRes.use();
-		this.uTranslation=new Uniform(2,this.program,"u_res",[50,50],this.gl);
+		this.uTranslation=new Uniform(2,this.program,"u_translation",[50,50],this.gl);
 		uTranslation.use();
 		this.aPos=new Attribute(2,this.program,"a_pos",this.setRectangle(50,50,200,200),this.gl);
 //this.randomInt(300),this.randomInt(300),this.randomInt(300),this.randomInt(300)));
