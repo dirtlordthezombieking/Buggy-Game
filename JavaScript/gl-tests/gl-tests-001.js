@@ -42,7 +42,8 @@ function GLTest001(shaderProgram,glCore)
 		this.gl.useProgram(this.program);
 		this.uRes=new Uniform(2,this.program,"u_res",[this.gl.canvas.width,this.gl.canvas.height]);
 		this.uRes.use();
-		this.aPos=new Attribute(2,this.program,"a_pos",this.setRectangle(this.randomInt(300),this.randomInt(300),this.randomInt(300),this.randomInt(300)));
+		this.aPos=new Attribute(2,this.program,"a_pos",this.setRectangle(50,50,200,200));
+//this.randomInt(300),this.randomInt(300),this.randomInt(300),this.randomInt(300)));
 		this.aPos.use();
 		this.uColour=new Uniform(4,this.program,"u_colour",[Math.random(),Math.random(),Math.random(),1]);
 		this.uColour.use();
