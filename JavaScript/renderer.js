@@ -1,8 +1,7 @@
-let gl;
 function start()
 {
 	let canvas=document.querySelector("#canvas");
-	gl=canvas.getContext("webgl");
+	let gl=canvas.getContext("webgl");
 	if(!gl)
 	{
 		document.getElementById("test").innerHTML="web gl not available";
