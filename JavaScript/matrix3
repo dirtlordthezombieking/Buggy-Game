@@ -1,5 +1,6 @@
 function Matrix3()
 {
+	this.loc="";
 	this.size=[1,1];
 	this.scale=
 	[
@@ -109,4 +110,12 @@ function Matrix3()
 			b20*a02+b21*a12+b22*a22
 		];
 	};
+	this.setData=function(location)
+	{
+		this.loc=location;
+	};
+	this.use=function()
+	{
+		gl.uniformMatrix3fv(this.loc,false,this.total);
+	}
 }
