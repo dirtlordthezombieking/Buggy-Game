@@ -5,32 +5,32 @@ function Matrix3()
 	[
 		1,0,0,
 		0,1,0,
-		0,0,1,
+		0,0,1
 	];
 	this.angle=0;
 	this.rotation=
 	[
 		1,0,0,
 		0,1,0,
-		0,0,1,
+		0,0,1
 	];
 	this.position=[0,0];
 	this.translation=
 	[
 		1,0,0,
 		0,1,0,
-		0,0,1,
+		0,0,1
 	];
 	this.total=
 	[
 		1,0,0,
 		0,1,0,
-		0,0,1,
+		0,0,1
 	];
 	this.update=function()
 	{
 		this.total=this.multiply(this.multiply(this.scale,this.rotation),this.translation);
-	}
+	};
 	this.setScale=function(x,y)
 	{
 		this.size=[x,y];
@@ -38,9 +38,9 @@ function Matrix3()
 		[
 			x,0,0,
 			0,y,0,
-			0,0,1,
+			0,0,1
 		];
-	}
+	};
 	this.setRotation=function(a)
 	{
 		this.angle=a;
@@ -49,11 +49,11 @@ function Matrix3()
 		let s=Math.sin(r);
 		this.rotation=
 		[
-			1,0,0,
-			0,1,0,
-			0,0,1,
+			c,-s,0,
+			s,c,0,
+			0,0,1
 		];
-	}
+	};
 	this.setTranslation=function(x,y)
 	{
 		this.position=[x,y];
@@ -61,21 +61,21 @@ function Matrix3()
 		[
 			1,0,0,
 			0,1,0,
-			y,x,1,
+			y,x,1
 		];
-	}
+	};
 	this.resize=function(x,y)
 	{
 		this.setScale(this.size[0]*x,this.size[1]*y);
-	}
+	};
 	this.rotate=function(a)
 	{
 		this.setRotation(this.angle+a);
-	}
-	this.translate=function(xy)
+	};
+	this.translate=function(x,y)
 	{
 		this.setTranslation(this.position[0]+x,this.position[1]+y);
-	}
+	};
 	this.multiply=function(a,b)
 	{
 		let a00=a[0*3+0];
@@ -106,7 +106,7 @@ function Matrix3()
 			b10*a02+b11*a12+b12*a22,
 			b20*a00+b21*a10+b22*a20,
 			b20*a01+b21*a11+b22*a21,
-			b20*a02+b21*a12+b22*a22,
+			b20*a02+b21*a12+b22*a22
 		];
-	}
+	};
 }
