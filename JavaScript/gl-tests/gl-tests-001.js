@@ -8,7 +8,7 @@ function GLTest001(shaderProgram,glCore)
 	this.text=0;
 	this.program=shaderProgram;
 	this.gl=glCore;
-	this.uTranslation=0
+	this.uTranslation=0;
 	this.start=function(test)
 	{
 		loadImage("images/stand in.png",function(img)
@@ -44,7 +44,7 @@ function GLTest001(shaderProgram,glCore)
 		this.uRes=new Uniform(2,this.program,"u_res",[this.gl.canvas.width,this.gl.canvas.height],this.gl);
 		this.uRes.use();
 		this.uTranslation=new Uniform(2,this.program,"u_translation",[50,50],this.gl);
-		uTranslation.use();
+		this.uTranslation.use();
 		this.aPos=new Attribute(2,this.program,"a_pos",this.setRectangle(50,50,200,200),this.gl);
 //this.randomInt(300),this.randomInt(300),this.randomInt(300),this.randomInt(300)));
 		this.aPos.use();
