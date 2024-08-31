@@ -2,7 +2,7 @@ function Uniform(uniformSize,shaderProgram,location,uniformValue,glCore)
 {
 	this.size=uniformSize;
 	this.prog=shaderProgram;
-	this.loc=gl.getUniformLocation(shaderProgram,location);
+	this.loc=glCore.getUniformLocation(shaderProgram,location);
 	this.value=uniformValue;
 	this.gl=glCore;
 	this.set=function(newValue)
@@ -33,12 +33,12 @@ function Texture(shaderProgram,location,imageSrc,referenceID,glCore)
 {
 	this.prog=shaderProgram;
 	this.image=imageSrc;
-	this.loc=gl.getUniformLocation(shaderProgram,location);
+	this.loc=glCore.getUniformLocation(shaderProgram,location);
 	this.id=referenceID;
 	this.gl=glCore;
 	this.push=function()
 	{
-		this.texture=gl.createTexture();
+		this.texture=this.gl.createTexture();
 		this.gl.bindTexture(this.gl.TEXTURE_2D,this.texture);
 		this.gl.texParameteri(this.gl.TEXTURE_2D,this.gl.TEXTURE_WRAP_S,this.gl.CLAMP_TO_EDGE);
 		this.gl.texParameteri(this.gl.TEXTURE_2D,this.gl.TEXTURE_WRAP_T,this.gl.CLAMP_TO_EDGE);
@@ -57,7 +57,7 @@ function Attribute(attributeSize,shaderProgram,location, attributeValue,glCore)
 {
 	this.size=attributeSize;
 	this.prog=shaderProgram;
-	this.loc=gl.getAttribLocation(shaderProgram,location);
+	this.loc=glCore.getAttribLocation(shaderProgram,location);
 	this.value=attributeValue;
 	this.gl=glCore;
 	this.use=function()
