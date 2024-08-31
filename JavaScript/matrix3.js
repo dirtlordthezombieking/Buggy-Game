@@ -110,7 +110,6 @@ function Matrix3()
 		logMessage("step"+i);
 		i++;
 		let b00=b[0*3+0];
-		let i=0;
 		logMessage("step"+i);
 		i++;
 		let b01=b[0*3+1];
