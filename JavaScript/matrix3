@@ -1,6 +1,6 @@
 function Matrix3()
 {
-	this.loc="";
+	this.loc=0;
 	this.size=[1,1];
 	this.scale=
 	[
@@ -110,12 +110,13 @@ function Matrix3()
 			b20*a02+b21*a12+b22*a22
 		];
 	};
-	this.setData=function(location)
+	this.setData=function(shaderProgram,location)
 	{
-		this.loc=location;
+		this.loc=gl.getUniformLocation(shaderProgram,location);
 	};
 	this.use=function()
 	{
 		gl.uniformMatrix3fv(this.loc,false,this.total);
-	}
+	};
 }
+logMessage("matrix3 Version: 0.0.0 (0)");
