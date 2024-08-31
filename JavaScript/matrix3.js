@@ -83,76 +83,59 @@ function Matrix3()
 		logMessage("step"+i);
 		i++;
 		let a00=a[0*3+0];
-		let i=0;
 		logMessage("step"+i);
 		i++;
 		let a01=a[0*3+1];
-		let i=0;
 		logMessage("step"+i);
 		i++;
 		let a02=a[0*3+2];
-		let i=0;
 		logMessage("step"+i);
 		i++;
 		let a10=a[1*3+0];
-		let i=0;
 		logMessage("step"+i);
 		i++;
 		let a11=a[1*3+1];
-		let i=0;
 		logMessage("step"+i);
 		i++;
 		let a12=a[1*3+2];
-		let i=0;
 		logMessage("step"+i);
 		i++;
 		let a20=a[2*3+0];
-		let i=0;
 		logMessage("step"+i);
 		i++;
 		let a21=a[2*3+1];
-		let i=0;
 		logMessage("step"+i);
 		i++;
 		let a22=a[2*3+2];
-		let i=0;
 		logMessage("step"+i);
-		I++;
+		i++;
 		let b00=b[0*3+0];
 		let i=0;
 		logMessage("step"+i);
 		i++;
 		let b01=b[0*3+1];
-		let i=0;
 		logMessage("step"+i);
 		i++;
 		let b02=b[0*3+2];
-		let i=0;
 		logMessage("step"+i);
 		i++;
 		let b10=b[1*3+0];
-		let i=0;
 		logMessage("step"+i);
 		i++;
 		let b11=b[1*3+1];
-		let i=0;
 		logMessage("step"+i);
 		i++;
 		let b12=b[1*3+2];
-		let i=0;
 		logMessage("step"+i);
-		j++;
+		i++;
 		let b20=b[2*3+0];
-		let i=0;
 		logMessage("step"+i);
 		i++;
 		let b21=b[2*3+1];
-		let i=0;
 		logMessage("step"+i);
 		i++;
 		let b22=b[2*3+2];
-		return
-		[
+		return[
 			b00*a00+b01*a10+b02*a20,
 			b00*a01+b01*a11+b02*a21,
 			b00*a02+b01*a12+b02*a22,
@@ -164,11 +147,11 @@ function Matrix3()
 			b20*a02+b21*a12+b22*a22
 		];
 	};
-	this.setData=function(shaderProgram,location)
+	this.setData=function(shaderProgram,location,gl)
 	{
 		this.loc=gl.getUniformLocation(shaderProgram,location);
 	};
-	this.use=function()
+	this.use=function(gl)
 	{
 		gl.uniformMatrix3fv(this.loc,false,this.total);
 	};
