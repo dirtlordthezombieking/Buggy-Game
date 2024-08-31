@@ -8,6 +8,7 @@ function GLTest001(shaderProgram,glCore)
 	this.text=0;
 	this.program=shaderProgram;
 	this.gl=glCore;
+	this.uTranslation=0
 	this.start=function(test)
 	{
 		loadImage("images/stand in.png",function(img)
@@ -29,10 +30,10 @@ function GLTest001(shaderProgram,glCore)
 				1.0,0.0,
 				1.0,1.0
 			]
-		));
+		),this.gl);
 		this.aTexCoord.use();
 //texture
-		this.text=new Texture(this.program,"u_colourTexture",this.image,0);
+		this.text=new Texture(this.program,"u_colourTexture",this.image,0,this.gl);
 		this.text.push();
 		this.text.use();
 //position
@@ -40,12 +41,15 @@ function GLTest001(shaderProgram,glCore)
 		this.gl.clearColor(0,0,0,1);
 		this.gl.clear(this.gl.COLOR_BUFFER_BIT);
 		this.gl.useProgram(this.program);
-		this.uRes=new Uniform(2,this.program,"u_res",[this.gl.canvas.width,this.gl.canvas.height]);
+		this.uRes=new Uniform(2,this.program,"u_res",[this.gl.canvas.width,this.gl.canvas.height],this.gl);
+		this.uTranslation=new Uniform(2,this.program,"u_res",[50,50],this.gl);
+		uTranslation.use()
 		this.uRes.use();
-		this.aPos=new Attribute(2,this.program,"a_pos",this.setRectangle(50,50,200,200));
+		this.aPos=new Attribute(2,this.program,"a_pos",this.setRectangle(50,50,200,200),this.gl);
 //this.randomInt(300),this.randomInt(300),this.randomInt(300),this.randomInt(300)));
 		this.aPos.use();
-		this.uColour=new Uniform(4,this.program,"u_colour",[Math.random(),Math.random(),Math.random(),1]);
+		this.uColour=new Uniform(4,this.program,"u_colour",[1,1,1,1],this.gl);
+//Math.random(),Math.random(),Math.random(),1]);
 		this.uColour.use();
 		this.gl.drawArrays(this.gl.TRIANGLES,0,6);
 	};
