@@ -28,9 +28,53 @@ function Matrix3()
 		0,1,0,
 		0,0,1
 	];
-	this.update=function()
+	this.setSRT=function()
 	{
-		this.total=this.multiply(this.multiply(this.scale,this.rotation),this.translation);
+		let mat=[1,0,0,0,1,0,1,0,0];
+		mat=this.multiply(mat,this.scale);
+		mat=this.multiply(mat,this.rotation);
+		mat=this.multiply(mat,this.translation);
+		this.total=mat;
+	};
+	this.setRST=function()
+	{
+		let mat=[1,0,0,0,1,0,1,0,0];
+		mat=this.multiply(mat,this.rotation);
+		mat=this.multiply(mat,this.scale);
+		mat=this.multiply(mat,this.translation);
+		this.total=mat;
+	};
+	this.setRTS=function()
+	{
+		let mat=[1,0,0,0,1,0,1,0,0];
+		mat=this.multiply(mat,this.rotation);
+		mat=this.multiply(mat,this.translation);
+		mat=this.multiply(mat,this.scale);
+		this.total=mat;
+	};
+	this.setTRS=function()
+	{
+		let mat=[1,0,0,0,1,0,1,0,0];
+		mat=this.multiply(mat,this.translation);
+		mat=this.multiply(mat,this.rotation);
+		mat=this.multiply(mat,this.scale);
+		this.total=mat;
+	};
+	this.setSTR=function()
+	{
+		let mat=[1,0,0,0,1,0,1,0,0];
+		mat=this.multiply(mat,this.scale);
+		mat=this.multiply(mat,this.translation);
+		mat=this.multiply(mat,this.rotation);
+		this.total=mat;
+	};
+	this.setTSR=function()
+	{
+		let mat=[1,0,0,0,1,0,1,0,0];
+		mat=this.multiply(mat,this.translation);
+		mat=this.multiply(mat,this.scale);
+		mat=this.multiply(mat,this.rotation);
+		this.total=mat;
 	};
 	this.setScale=function(x,y)
 	{
@@ -62,7 +106,7 @@ function Matrix3()
 		[
 			1,0,0,
 			0,1,0,
-			y,x,1
+			x,y,1
 		];
 	};
 	this.resize=function(x,y)
@@ -79,60 +123,23 @@ function Matrix3()
 	};
 	this.multiply=function(a,b)
 	{
-		let i=0;
-		logMessage("step"+i);
-		i++;
 		let a00=a[0*3+0];
-		logMessage("step"+i);
-		i++;
 		let a01=a[0*3+1];
-		logMessage("step"+i);
-		i++;
 		let a02=a[0*3+2];
-		logMessage("step"+i);
-		i++;
 		let a10=a[1*3+0];
-		logMessage("step"+i);
-		i++;
 		let a11=a[1*3+1];
-		logMessage("step"+i);
-		i++;
 		let a12=a[1*3+2];
-		logMessage("step"+i);
-		i++;
 		let a20=a[2*3+0];
-		logMessage("step"+i);
-		i++;
 		let a21=a[2*3+1];
-		logMessage("step"+i);
-		i++;
 		let a22=a[2*3+2];
-		logMessage("step"+i);
-		i++;
 		let b00=b[0*3+0];
-		logMessage("step"+i);
-		i++;
 		let b01=b[0*3+1];
-		logMessage("step"+i);
-		i++;
 		let b02=b[0*3+2];
-		logMessage("step"+i);
-		i++;
 		let b10=b[1*3+0];
-		logMessage("step"+i);
-		i++;
 		let b11=b[1*3+1];
-		logMessage("step"+i);
-		i++;
 		let b12=b[1*3+2];
-		logMessage("step"+i);
-		i++;
 		let b20=b[2*3+0];
-		logMessage("step"+i);
-		i++;
 		let b21=b[2*3+1];
-		logMessage("step"+i);
-		i++;
 		let b22=b[2*3+2];
 		return[
 			b00*a00+b01*a10+b02*a20,
