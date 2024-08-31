@@ -42,13 +42,13 @@ function GLTest001(shaderProgram,glCore)
 		this.gl.clear(this.gl.COLOR_BUFFER_BIT);
 		this.gl.useProgram(this.program);
 		this.uRes=new Uniform(2,this.program,"u_res",[this.gl.canvas.width,this.gl.canvas.height],this.gl);
-		this.uTranslation=new Uniform(2,this.program,"u_res",[50,50],this.gl);
-		uTranslation.use()
 		this.uRes.use();
+		this.uTranslation=new Uniform(2,this.program,"u_res",[50,50],this.gl);
+		uTranslation.use();
 		this.aPos=new Attribute(2,this.program,"a_pos",this.setRectangle(50,50,200,200),this.gl);
 //this.randomInt(300),this.randomInt(300),this.randomInt(300),this.randomInt(300)));
 		this.aPos.use();
-		this.uColour=new Uniform(4,this.program,"u_colour",[1,1,1,1],this.gl);
+		this.uColour=new Uniform(4,this.program,"u_colour",[0,1,1,1],this.gl);
 //Math.random(),Math.random(),Math.random(),1]);
 		this.uColour.use();
 		this.gl.drawArrays(this.gl.TRIANGLES,0,6);
