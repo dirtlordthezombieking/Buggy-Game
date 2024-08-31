@@ -14,11 +14,11 @@ const basicVertex=
 attribute vec2 a_texCoord;
 uniform vec2 u_res;
 varying vec2 v_texCoord;
-uniform vec2 u_translation;
+uniform mat3 u_transform;
 void main()
 {
   v_texCoord=a_texCoord;
-  vec2 pos=a_pos.xy+u_translation;
+  vec2 pos=(u_transform*vec3(a_pos,1)).xy;
   vec2 zeroToOne=pos/u_res;
   vec2 zeroToTwo=zeroToOne*2.0;
   vec2 clipSpace=zeroToTwo-1.0;
