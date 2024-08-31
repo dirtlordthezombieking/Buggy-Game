@@ -54,7 +54,7 @@ function GLTest001(shaderProgram,glCore)
 		logMessage("006");
 		this.uTransform.setTranslation(100.0,0.0);
 		logMessage("007");
-		this.uTransform.update();
+		this.uTransform.setSRT();
 		logMessage("008");
 		this.uTransform.setData(this.program,"u_transform",this.gl);
 		logMessage("008");
