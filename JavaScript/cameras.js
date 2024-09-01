@@ -31,7 +31,7 @@ function Camera2D(width,height)
 		gl.uniformMatrix3fv(this.loc,false,this.total);
 	};
 }
-function OrthoCamera(width,height,depth)
+function SimpleOrthoCamera(width,height,depth)
 {
 	this.w=width;
 	this.h=height;
@@ -68,4 +68,41 @@ function OrthoCamera(width,height,depth)
 		gl.uniformMatrix4fv(this.loc,false,this.total);
 	};
 }
-logMessage("cameras Version: 0.0.1 (0)");
+function StandardOrthoCamera(left, right, bottom, top, near, far)
+{
+	this.w=width;
+	this.h=height;
+	this.d=depth;
+	this.loc=0;
+	this.base=
+	[
+		2/(right-left),           0,                        0,                    0,
+		0,                        2/(top-bottom),           0,                    0,
+		0,                        0,                        2/(near-far),         0,
+		(left+right)/(left-right),(bottom+top)/(bottom-top),(near+far)/(near-far),1
+	];
+	this.total=this.base;
+	this.transform=new Matrix4();
+	this.reset=function()
+	{
+		this.transform.reset();
+		this.total=this.base;
+	};
+	this.update=function()
+	{
+		this.total=this.transform.multiply(this.base,this.transform.translation);
+		this.total=this.transform.multiply(this.total,this.transform.rotationX);
+		this.total=this.transform.multiply(this.total,this.transform.rotationY);
+		this.total=this.transform.multiply(this.total,this.transform.rotationZ);
+		this.total=this.transform.multiply(this.total,this.transform.scale);
+	};
+	this.setData=function(shaderProgram,location,gl)
+	{
+		this.loc=gl.getUniformLocation(shaderProgram,location);
+	};
+	this.use=function(gl)
+	{
+		gl.uniformMatrix4fv(this.loc,false,this.total);
+	};
+}
+logMessage("cameras Version: 0.0.2 (0)");
