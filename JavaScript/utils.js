@@ -78,4 +78,8 @@ async function getTextData(src,onDone)
 		logMessage("Error: "+e.message);
 	}
 }
+function setup()
+{
+	gl.enable(gl.CULL_FACE);
+}
 logMessage("Utils Version: 0.0.10 (0)");
