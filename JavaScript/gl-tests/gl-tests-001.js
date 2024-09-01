@@ -48,7 +48,7 @@ function GLTest001(shaderProgram,glCore)
 		this.uProj.use(this.gl);
 		this.uTransform=new Matrix3();
 		this.uTransform.setScale(0.5,0.5);
-		this.uTransform.setRotation(0.0);
+		this.uTransform.setRotation(90.0);
 		this.uTransform.setTranslation(0.0,100.0);
 		this.uTransform.setSRT();
 		this.uTransform.setData(this.program,"u_transform",this.gl);
