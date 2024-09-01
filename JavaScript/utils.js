@@ -78,8 +78,13 @@ async function getTextData(src,onDone)
 		logMessage("Error: "+e.message);
 	}
 }
-function setup()
+function glSetup(gl)
 {
 	gl.enable(gl.CULL_FACE);
+	gl.viewport(0,0,gl.canvas.width,gl.canvas.height);
+}
+function glStartFrame(gl)
+{
+	
 }
 logMessage("Utils Version: 0.0.10 (0)");
