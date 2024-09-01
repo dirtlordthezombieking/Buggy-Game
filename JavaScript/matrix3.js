@@ -28,6 +28,36 @@ function Matrix3()
 		0,1,0,
 		0,0,1
 	];
+	this.reset=function()
+	{
+		this.size=[1,1];
+		this.scale=
+		[
+			1,0,0,
+			0,1,0,
+			0,0,1
+		];
+		this.angle=0;
+		this.rotation=
+		[
+			1,0,0,
+			0,1,0,
+			0,0,1
+		];
+		this.position=[0,0];
+		this.translation=
+		[
+			1,0,0,
+			0,1,0,
+			0,0,1
+		];
+		this.total=
+		[
+			1,0,0,
+			0,1,0,
+			0,0,1
+		];
+	}
 	this.setSRT=function()
 	{
 		let mat=[1,0,0,0,1,0,0,0,1];
