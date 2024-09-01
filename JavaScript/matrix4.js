@@ -310,4 +310,4 @@ function Matrix4()
 		gl.uniformMatrix4fv(this.loc,false,this.total);
 	};
 }
-logMessage("matrix3 Version: 0.0.0 (0)");
+logMessage("matrix4 Version: 0.0.0 (0)");
