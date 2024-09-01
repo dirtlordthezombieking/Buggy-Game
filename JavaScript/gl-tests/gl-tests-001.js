@@ -3,7 +3,7 @@ function GLTest001(shaderProgram,glCore)
 	this.aPos=0;
 	this.aTexCoord=0;
 	this.uColour=0;
-	this.uRes=0;
+	this.uProj=0;
 	this.image=0;
 	this.text=0;
 	this.program=shaderProgram;
@@ -41,8 +41,11 @@ function GLTest001(shaderProgram,glCore)
 		this.gl.clearColor(0,0,0,1);
 		this.gl.clear(this.gl.COLOR_BUFFER_BIT);
 		this.gl.useProgram(this.program);
-		this.uRes=new Uniform(2,this.program,"u_res",[this.gl.canvas.width,this.gl.canvas.height],this.gl);
-		this.uRes.use();
+		//this.uRes=new Uniform(2,this.program,"u_res",[this.gl.canvas.width,this.gl.canvas.height],this.gl);
+		//this.uRes.use();
+		this.uProj=new Camera2D(this.gl.canvas.width,this.gl.canvas.height);
+		this.uProj.setData(this.program,"u_proj",this.gl);
+		this.uProj.use(this.gl);
 		this.uTransform=new Matrix3();
 		this.uTransform.setScale(0.75,0.5);
 		this.uTransform.setRotation(45.0);
