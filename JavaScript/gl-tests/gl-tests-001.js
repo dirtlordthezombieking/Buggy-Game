@@ -37,9 +37,8 @@ function GLTest001(shaderProgram,glCore)
 		this.text.push();
 		this.text.use();
 //position
-		glSetup();
-		this.gl.clearColor(0,0,0,1);
-		this.gl.clear(this.gl.COLOR_BUFFER_BIT);
+		glSetup(this.gl);
+		glStarFrame(this.gl,0,0,0,1)
 		this.gl.useProgram(this.program);
 		//this.uRes=new Uniform(2,this.program,"u_res",[this.gl.canvas.width,this.gl.canvas.height],this.gl);
 		//this.uRes.use();
