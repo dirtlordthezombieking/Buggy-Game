@@ -83,8 +83,9 @@ function glSetup(gl)
 	gl.enable(gl.CULL_FACE);
 	gl.viewport(0,0,gl.canvas.width,gl.canvas.height);
 }
-function glStartFrame(gl)
+function glStartFrame(gl,r,g,b,a)
 {
-	
+	gl.clearColor(r,g,b,a);
+	gl.clear(gl.COLOR_BUFFER_BIT);
 }
-logMessage("Utils Version: 0.0.10 (0)");
+logMessage("Utils Version: 0.0.11 (0)");
