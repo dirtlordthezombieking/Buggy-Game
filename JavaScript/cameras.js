@@ -5,9 +5,9 @@ function Camera2D(width,height)
 	this.loc=0;
 	this.transform=
 	[
-		 2 / width, 0,          0,
-		 0,        -2 / height, 0,
-		-1,         1,          1
+		2 / width, 0,          0,
+		0,        -2 / height, 0,
+		0,         0,          1
 	]
 	this.setData=function(shaderProgram,location,gl)
 	{
