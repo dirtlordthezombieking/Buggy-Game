@@ -30,7 +30,7 @@ function Matrix3()
 	];
 	this.setSRT=function()
 	{
-		let mat=[1,0,0,0,1,0,1,0,0];
+		let mat=[1,0,0,0,1,0,0,0,1];
 		mat=this.multiply(mat,this.scale);
 		mat=this.multiply(mat,this.rotation);
 		mat=this.multiply(mat,this.translation);
@@ -38,7 +38,7 @@ function Matrix3()
 	};
 	this.setRST=function()
 	{
-		let mat=[1,0,0,0,1,0,1,0,0];
+		let mat=[1,0,0,0,1,0,0,0,1];
 		mat=this.multiply(mat,this.rotation);
 		mat=this.multiply(mat,this.scale);
 		mat=this.multiply(mat,this.translation);
@@ -46,7 +46,7 @@ function Matrix3()
 	};
 	this.setRTS=function()
 	{
-		let mat=[1,0,0,0,1,0,1,0,0];
+		let mat=[1,0,0,0,1,0,0,0,1];
 		mat=this.multiply(mat,this.rotation);
 		mat=this.multiply(mat,this.translation);
 		mat=this.multiply(mat,this.scale);
@@ -54,7 +54,7 @@ function Matrix3()
 	};
 	this.setTRS=function()
 	{
-		let mat=[1,0,0,0,1,0,1,0,0];
+		let mat=[1,0,0,0,1,0,0,0,1];
 		mat=this.multiply(mat,this.translation);
 		mat=this.multiply(mat,this.rotation);
 		mat=this.multiply(mat,this.scale);
@@ -62,7 +62,7 @@ function Matrix3()
 	};
 	this.setSTR=function()
 	{
-		let mat=[1,0,0,0,1,0,1,0,0];
+		let mat=[1,0,0,0,1,0,0,0,1];
 		mat=this.multiply(mat,this.scale);
 		mat=this.multiply(mat,this.translation);
 		mat=this.multiply(mat,this.rotation);
@@ -70,7 +70,7 @@ function Matrix3()
 	};
 	this.setTSR=function()
 	{
-		let mat=[1,0,0,0,1,0,1,0,0];
+		let mat=[1,0,0,0,1,0,0,0,1];
 		mat=this.multiply(mat,this.translation);
 		mat=this.multiply(mat,this.scale);
 		mat=this.multiply(mat,this.rotation);
