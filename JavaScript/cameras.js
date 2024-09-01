@@ -9,45 +9,29 @@ function Camera2D(width,height)
 		0,        2 / height,0,
 		0,        0,         1
 	];
-	this.total=base;
+	this.total=this.base;
 	this.transform=new Matrix3();
 	this.reset=function()
 	{
-		this.size=[1,1];
-		this.scale=
-		[
-			1,0,0,
-			0,1,0,
-			0,0,1
-		];
-		this.angle=0;
-		this.rotation=
-		[
-			1,0,0,
-			0,1,0,
-			0,0,1
-		];
-		this.position=[0,0];
-		this.translation=
-		[
-			1,0,0,
-			0,1,0,
-			0,0,1
-		];
-		this.total=base;
-	}
+		this.transform.reset();
+		this.total=this.base;
+	};
+	this.update=function()
+	{
+		this.total=this.transform.multiply(this.base,this.transform.translation);
+		this.total=this.transform.multiply(this.total,this.transform.rotation);
+		this.total=this.transform.multiply(this.total,this.transform.scale);
+	};
 	this.setData=function(shaderProgram,location,gl)
 	{
 		this.loc=gl.getUniformLocation(shaderProgram,location);
 	};
-	this.update=function()
-	{
-	}
 	this.use=function(gl)
 	{
 		gl.uniformMatrix3fv(this.loc,false,this.total);
 	};
-}function Camera(width,height,depth)
+}
+function OrthoCamera(width,height,depth)
 {
 	this.w=width;
 	this.h=height;
@@ -60,8 +44,22 @@ function Camera2D(width,height)
 		0,      0,       2/depth,0,
 		0,      0,       0,      1
 	];
+	this.total=this.base;
 	this.transform=new Matrix4();
-	this.setData=Orthofunction(shaderProgram,location,gl)
+	this.reset=function()
+	{
+		this.transform.reset();
+		this.total=this.base;
+	};
+	this.update=function()
+	{
+		this.total=this.transform.multiply(this.base,this.transform.translation);
+		this.total=this.transform.multiply(this.total,this.transform.rotationX);
+		this.total=this.transform.multiply(this.total,this.transform.rotationY);
+		this.total=this.transform.multiply(this.total,this.transform.rotationZ);
+		this.total=this.transform.multiply(this.total,this.transform.scale);
+	};
+	this.setData=function(shaderProgram,location,gl)
 	{
 		this.loc=gl.getUniformLocation(shaderProgram,location);
 	};
