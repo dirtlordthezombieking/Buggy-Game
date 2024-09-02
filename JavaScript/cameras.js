@@ -138,4 +138,4 @@ function PerspectiveCamera(left, right, bottom, top, near, far)
 		gl.uniformMatrix4fv(this.loc,false,this.total);
 	};
 }
-logMessage("cameras Version: 0.0.2 (0)");
+logMessage("cameras Version: 0.0.3 (0)");
