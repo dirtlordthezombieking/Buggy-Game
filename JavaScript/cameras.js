@@ -1,7 +1,5 @@
 function Camera2D(width,height)
 {
-	this.w=width;
-	this.h=height;
 	this.loc=0;
 	this.base=
 	[
@@ -32,9 +30,6 @@ function Camera2D(width,height)
 }
 function SimpleOrthoCamera(width,height,depth)
 {
-	this.w=width;
-	this.h=height;
-	this.d=depth;
 	this.loc=0;
 	this.base=
 	[
@@ -68,9 +63,6 @@ function SimpleOrthoCamera(width,height,depth)
 }
 function StandardOrthoCamera(left, right, bottom, top, near, far)
 {
-	this.w=width;
-	this.h=height;
-	this.d=depth;
 	this.loc=0;
 	this.base=
 	[
@@ -102,11 +94,11 @@ function StandardOrthoCamera(left, right, bottom, top, near, far)
 		gl.uniformMatrix4fv(this.loc,false,this.total);
 	};
 }
-function PerspectiveCamera(left, right, bottom, top, near, far)
+function PerspectiveCamera(fov, aspect, near, far)
 {
-	this.w=width;
-	this.h=height;
-	this.d=depth;
+	let fieldOfViewInRadians=
+	let f=Math.tan(Math.PI*0.5-0.5*fieldOfViewInRadians);
+	let rangeInv=1.0/(near-far);
 	this.loc=0;
 	this.base=
 	[
