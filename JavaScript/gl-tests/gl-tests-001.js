@@ -38,7 +38,7 @@ function GLTest001(shaderProgram,glCore)
 		this.text.use();
 //position
 		glSetup(this.gl);
-		glStarFrame(this.gl,0,0,0,1)
+		glStartFrame(this.gl,0,0,0,1)
 		this.gl.useProgram(this.program);
 		//this.uRes=new Uniform(2,this.program,"u_res",[this.gl.canvas.width,this.gl.canvas.height],this.gl);
 		//this.uRes.use();
