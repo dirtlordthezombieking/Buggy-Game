@@ -47,10 +47,10 @@ function SimpleOrthoCamera(width,height,depth)
 	};
 	this.update=function()
 	{
-		this.total=this.transform.multiply(this.base,this.transform.translation);
-		this.total=this.transform.multiply(this.total,this.transform.rotationX);
+		this.total=this.transform.multiply(this.base,this.transform.rotationX);
 		this.total=this.transform.multiply(this.total,this.transform.rotationY);
 		this.total=this.transform.multiply(this.total,this.transform.rotationZ);
+		this.total=this.transform.multiply(this.total,this.transform.translation);
 	};
 	this.setData=function(shaderProgram,location,gl)
 	{
@@ -80,10 +80,10 @@ function StandardOrthoCamera(left,right,bottom,top,near,far)
 	};
 	this.update=function()
 	{
-		this.total=this.transform.multiply(this.base,this.transform.translation);
-		this.total=this.transform.multiply(this.total,this.transform.rotationX);
+		this.total=this.transform.multiply(this.base,this.transform.rotationX);
 		this.total=this.transform.multiply(this.total,this.transform.rotationY);
 		this.total=this.transform.multiply(this.total,this.transform.rotationZ);
+		this.total=this.transform.multiply(this.total,this.transform.translation);
 	};
 	this.setData=function(shaderProgram,location,gl)
 	{
@@ -116,10 +116,10 @@ function PerspectiveCamera(fov,aspect,near,far)
 	};
 	this.update=function()
 	{
-		this.total=this.transform.multiply(this.base,this.transform.translation);
-		this.total=this.transform.multiply(this.total,this.transform.rotationX);
+		this.total=this.transform.multiply(this.base,this.transform.rotationX);
 		this.total=this.transform.multiply(this.total,this.transform.rotationY);
 		this.total=this.transform.multiply(this.total,this.transform.rotationZ);
+		this.total=this.transform.multiply(this.total,this.transform.translation);
 	};
 	this.setData=function(shaderProgram,location,gl)
 	{
