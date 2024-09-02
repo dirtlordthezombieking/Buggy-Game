@@ -61,7 +61,7 @@ function SimpleOrthoCamera(width,height,depth)
 		gl.uniformMatrix4fv(this.loc,false,this.total);
 	};
 }
-function StandardOrthoCamera(left, right, bottom, top, near, far)
+function StandardOrthoCamera(left,right,bottom,top,near,far)
 {
 	this.loc=0;
 	this.base=
@@ -94,9 +94,9 @@ function StandardOrthoCamera(left, right, bottom, top, near, far)
 		gl.uniformMatrix4fv(this.loc,false,this.total);
 	};
 }
-function PerspectiveCamera(fov, aspect, near, far)
+function PerspectiveCamera(fov,aspect,near,far)
 {
-	let fieldOfViewInRadians=
+	let fieldOfViewInRadians=fov*Math.PI/180;
 	let f=Math.tan(Math.PI*0.5-0.5*fieldOfViewInRadians);
 	let rangeInv=1.0/(near-far);
 	this.loc=0;
