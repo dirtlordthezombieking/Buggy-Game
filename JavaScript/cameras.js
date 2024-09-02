@@ -105,4 +105,41 @@ function StandardOrthoCamera(left, right, bottom, top, near, far)
 		gl.uniformMatrix4fv(this.loc,false,this.total);
 	};
 }
+function PerspectiveCamera(left, right, bottom, top, near, far)
+{
+	this.w=width;
+	this.h=height;
+	this.d=depth;
+	this.loc=0;
+	this.base=
+	[
+		f/aspect,0,0,                   0,
+		0,       f,0,                   0,
+		0,       0,(near+far)*rangeInv,-1,
+		0,       0,near*far*rangeInv*2, 0
+	];
+	this.total=this.base;
+	this.transform=new Matrix4();
+	this.reset=function()
+	{
+		this.transform.reset();
+		this.total=this.base;
+	};
+	this.update=function()
+	{
+		this.total=this.transform.multiply(this.base,this.transform.translation);
+		this.total=this.transform.multiply(this.total,this.transform.rotationX);
+		this.total=this.transform.multiply(this.total,this.transform.rotationY);
+		this.total=this.transform.multiply(this.total,this.transform.rotationZ);
+		this.total=this.transform.multiply(this.total,this.transform.scale);
+	};
+	this.setData=function(shaderProgram,location,gl)
+	{
+		this.loc=gl.getUniformLocation(shaderProgram,location);
+	};
+	this.use=function(gl)
+	{
+		gl.uniformMatrix4fv(this.loc,false,this.total);
+	};
+}
 logMessage("cameras Version: 0.0.2 (0)");
