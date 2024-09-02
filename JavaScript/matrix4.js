@@ -456,7 +456,7 @@ function Matrix4Cam()
 	this.setRotationX=function(a)
 	{
 		this.angle=a;
-		let r=a*Math.PI/180;
+		let r=(-a)*Math.PI/180;
 		let c=Math.cos(r);
 		let s=Math.sin(r);
 		this.rotation=
@@ -470,7 +470,7 @@ function Matrix4Cam()
 	this.setRotationY=function(a)
 	{
 		this.angle=a;
-		let r=a*Math.PI/180;
+		let r=(-a(*Math.PI/180;
 		let c=Math.cos(r);
 		let s=Math.sin(r);
 		this.rotation=
@@ -484,7 +484,7 @@ function Matrix4Cam()
 	this.setRotationZ=function(a)
 	{
 		this.angle=a;
-		let r=a*Math.PI/180;
+		let r=(-a)*Math.PI/180;
 		let c=Math.cos(r);
 		let s=Math.sin(r);
 		this.rotation=
@@ -509,7 +509,7 @@ function Matrix4Cam()
 			1,0,0,0,
 			0,1,0,0,
 			0,0,1,0,
-			x,y,z,1
+			-x,-y,-z,1
 		];
 	};
 	this.rotateX=function(a)
