@@ -57,7 +57,7 @@ function Matrix3()
 			0,1,0,
 			0,0,1
 		];
-	}
+	};
 	this.setSRT=function()
 	{
 		let mat=[1,0,0,0,1,0,0,0,1];
@@ -224,7 +224,7 @@ function Matrix3Cam()
 			0,1,0,
 			0,0,1
 		];
-	}
+	};
 	this.setRotation=function(a)
 	{
 		this.angle=a;
