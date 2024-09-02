@@ -10,7 +10,7 @@ function Camera2D(width,height)
 		0,        0,         1
 	];
 	this.total=this.base;
-	this.transform=new Matrix3();
+	this.transform=new Matrix3Cam();
 	this.reset=function()
 	{
 		this.transform.reset();
@@ -20,7 +20,6 @@ function Camera2D(width,height)
 	{
 		this.total=this.transform.multiply(this.base,this.transform.translation);
 		this.total=this.transform.multiply(this.total,this.transform.rotation);
-		this.total=this.transform.multiply(this.total,this.transform.scale);
 	};
 	this.setData=function(shaderProgram,location,gl)
 	{
@@ -45,7 +44,7 @@ function SimpleOrthoCamera(width,height,depth)
 		0,      0,       0,      1
 	];
 	this.total=this.base;
-	this.transform=new Matrix4();
+	this.transform=new Matrix4Cam();
 	this.reset=function()
 	{
 		this.transform.reset();
@@ -57,7 +56,6 @@ function SimpleOrthoCamera(width,height,depth)
 		this.total=this.transform.multiply(this.total,this.transform.rotationX);
 		this.total=this.transform.multiply(this.total,this.transform.rotationY);
 		this.total=this.transform.multiply(this.total,this.transform.rotationZ);
-		this.total=this.transform.multiply(this.total,this.transform.scale);
 	};
 	this.setData=function(shaderProgram,location,gl)
 	{
@@ -82,7 +80,7 @@ function StandardOrthoCamera(left, right, bottom, top, near, far)
 		(left+right)/(left-right),(bottom+top)/(bottom-top),(near+far)/(near-far),1
 	];
 	this.total=this.base;
-	this.transform=new Matrix4();
+	this.transform=new Matrix4Cam();
 	this.reset=function()
 	{
 		this.transform.reset();
@@ -94,7 +92,6 @@ function StandardOrthoCamera(left, right, bottom, top, near, far)
 		this.total=this.transform.multiply(this.total,this.transform.rotationX);
 		this.total=this.transform.multiply(this.total,this.transform.rotationY);
 		this.total=this.transform.multiply(this.total,this.transform.rotationZ);
-		this.total=this.transform.multiply(this.total,this.transform.scale);
 	};
 	this.setData=function(shaderProgram,location,gl)
 	{
@@ -119,7 +116,7 @@ function PerspectiveCamera(left, right, bottom, top, near, far)
 		0,       0,near*far*rangeInv*2, 0
 	];
 	this.total=this.base;
-	this.transform=new Matrix4();
+	this.transform=new Matrix4Cam();
 	this.reset=function()
 	{
 		this.transform.reset();
@@ -131,7 +128,6 @@ function PerspectiveCamera(left, right, bottom, top, near, far)
 		this.total=this.transform.multiply(this.total,this.transform.rotationX);
 		this.total=this.transform.multiply(this.total,this.transform.rotationY);
 		this.total=this.transform.multiply(this.total,this.transform.rotationZ);
-		this.total=this.transform.multiply(this.total,this.transform.scale);
 	};
 	this.setData=function(shaderProgram,location,gl)
 	{
