@@ -44,9 +44,9 @@ function GLTest001(shaderProgram,glCore)
 		//this.uRes.use();
 		this.uProj=new Camera2D(this.gl.canvas.width,this.gl.canvas.height);
 		this.uProj.setData(this.program,"u_proj",this.gl);
-		//this.uProj.transform.setRotation(0.0);
-		//this.uProj.transform.setTranslation(0.0,0.0)
-		//this.uProj.update()
+		//this.uProj.transform.setRotation(20.0);
+		//this.uProj.transform.setTranslation(0.0,100.0)
+		this.uProj.update()
 		this.uProj.use(this.gl);
 		this.uTransform=new Matrix3();
 		this.uTransform.setScale(0.5,0.5);
