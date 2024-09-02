@@ -588,4 +588,4 @@ function Matrix4Cam()
 		];
 	};
 }
-logMessage("matrix4 Version: 0.0.0 (0)");
+logMessage("matrix4 Version: 0.0.1 (0)");
