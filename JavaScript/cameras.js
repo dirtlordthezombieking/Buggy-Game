@@ -16,8 +16,8 @@ function Camera2D(width,height)
 	};
 	this.update=function()
 	{
-		this.total=this.transform.multiply(this.total,this.transform.rotation);
-		this.total=this.transform.multiply(this.base,this.transform.translation);
+		this.total=this.transform.multiply(this.base,this.transform.rotation);
+		this.total=this.transform.multiply(this.total,this.transform.translation);
 	};
 	this.setData=function(shaderProgram,location,gl)
 	{
