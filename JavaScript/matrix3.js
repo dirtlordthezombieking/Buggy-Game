@@ -228,7 +228,7 @@ function Matrix3Cam()
 	this.setRotation=function(a)
 	{
 		this.angle=a;
-		let r=a*Math.PI/180;
+		let r=(-a)*Math.PI/180;
 		let c=Math.cos(r);
 		let s=Math.sin(r);
 		this.rotation=
@@ -245,7 +245,7 @@ function Matrix3Cam()
 		[
 			1,0,0,
 			0,1,0,
-			x,y,1
+			-x,-y,1
 		];
 	};
 	this.rotate=function(a)
