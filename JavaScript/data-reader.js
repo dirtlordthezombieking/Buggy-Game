@@ -1,6 +1,10 @@
 function readData(src)
 {
-	let read=new StringProcesser(getStringData(src));
+	getTextData(src,function(str)
+	{
+		let read=new StringProcesser(str);
+		letline="";
+	}));
 }
 function StringProcesser(txt)
 {
