@@ -1,6 +1,6 @@
 function readData(src)
 {
-	let read=new StringProcesser(readString(src));
+	let read=new StringProcesser(getStringData(src));
 }
 function StringProcesser(txt)
 {
