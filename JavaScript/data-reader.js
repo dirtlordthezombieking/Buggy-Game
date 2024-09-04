@@ -1,9 +1,19 @@
-function readData(src)
+async function readData(src)
 {
-	getTextData(src,function(str)
+	await getTextData(src,function(str)
 	{
 		let read=new StringProcesser(str);
-		letline="";
+		let line=read.nextLine();
+		if(line===":::{}:::")
+		{
+		}
+		else if(line===":::[]:::")
+		{
+		}
+		else
+		{
+			throw new error("Invalid data entry type: \'"+line+"\'.");
+		}
 	}));
 }
 function StringProcesser(txt)
@@ -16,4 +26,15 @@ function StringProcesser(txt)
 		pos=pos+1;
 		return c;
 	};
+	this.nextLine=function()
+	{
+		let char="";
+		let line="";
+		while(!(char==="\n"))
+		{
+			line=line+char;
+			char=this.next();
+		}
+		return line;
+	}
 }
