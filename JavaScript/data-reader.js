@@ -23,12 +23,12 @@ function StringProcesser(txt)
 	this.next=function()
 	{
 		let c=str[pos];
-		pos=pos+1;
+		this.pos=this.pos+1;
 		return c;
 	};
 	this.nextLine=function()
 	{
-		let char="";
+		let char=this.next();
 		let line="";
 		while(!(char==="\n"))
 		{
@@ -36,5 +36,17 @@ function StringProcesser(txt)
 			char=this.next();
 		}
 		return line;
+	}
+	this.getDepth=function()
+	{
+		let i=0;
+		let char=this.next();
+		while(!(char==="\t"))
+		{
+			char=this.next();
+			i=i+1;
+		}
+		this.pos=this.pos-1;
+		return i;
 	}
 }
