@@ -1,20 +1,27 @@
-async function readData(src)
+function DataReader
 {
-	await getTextData(src,function(str)
+	this.readData=async function(src)
 	{
-		let read=new StringProcesser(str);
-		let line=read.nextLine();
-		if(line===":::{}:::")
+		await getTextData(src,function(str)
 		{
-		}
-		else if(line===":::[]:::")
-		{
-		}
-		else
-		{
-			throw new error("Invalid data entry type: \'"+line+"\'.");
-		}
-	}));
+			let read=new StringProcesser(str);
+			let line=read.nextLine();
+			if(line===":::{}:::")
+			{
+			}
+			else if(line===":::[]:::")
+			{
+			}
+			else
+			{
+				throw new error("Invalid data entry type: \'"+line+"\'.");
+			}
+		}));
+	}
+	this.parseElement=function(reader)
+	{
+		let line=reader.nextLine().split":";
+	}
 }
 function StringProcesser(txt)
 {
