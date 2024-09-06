@@ -13,7 +13,6 @@ function DataReader()
 				}
 				else if(line===":::[]:::")
 				{
-					log message(e.
 				}
 				else
 				{
@@ -22,7 +21,7 @@ function DataReader()
 			}
 			catch(e)
 			{
-
+				log message(e.message);
 			}
 		});
 	}
@@ -43,11 +42,11 @@ function DataReader()
 		}
 		if(line[0]===">I")
 		{
-			return parseIntArray(line[1]);
+			return this parseIntArray(reader);
 		}
 		if(line[0]===">F")
 		{
-			return parseFloatArray(line[1]);
+			return this.parseFloatArray(reader);
 		}
 		if(line[0]==="[]")
 		{
@@ -77,6 +76,8 @@ function DataReader()
 		}
 		return out;
 	}
+	this.parseArray=function()
+	{}
 }
 function StringProcesser(txt)
 {
