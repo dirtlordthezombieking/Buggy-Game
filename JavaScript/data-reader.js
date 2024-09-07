@@ -8,7 +8,7 @@ function DataReader()
 			{
 				let readear=new StringProcesser(str);
 				let line=reader.nextLine();
-				let depth=new PassableReference(0)
+				let depth=new PassableReference(0);
 				if(line===":::{}:::")
 				{
 					this.parseObject(reader,depth);
