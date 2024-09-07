@@ -6,9 +6,9 @@ function DataReader()
 		{
 			try
 			{
-				let readear=new StringProcesser(str);
+				let reader=new StringProcesser(str);
 				let line=reader.nextLine();
-				let depth=new PassableReference(0)
+				let depth=new PassableReference(0);
 				if(line===":::{}:::")
 				{
 					this.parseObject(reader,depth);
@@ -19,18 +19,18 @@ function DataReader()
 				}
 				else
 				{
-					throw new error("Invalid data entry type: \'"+line+"\'.");
+					throw new Error("Invalid data entry type: '"+line+"'.");
 				}
 			}
 			catch(e)
 			{
-				log message(e.message);
+				logMessage(e.message);
 			}
 		});
-	}
+	};
 	this.parseElement=function(reader,depth)
 	{
-		let line=reader.nextLine().split":";
+		let line=reader.nextLine().split(":");
 		if(line[0]==="S")
 		{
 			return line[1];
@@ -45,13 +45,11 @@ function DataReader()
 		}
 		if(line[0]===">I")
 		{
-			return this parseIntArray(
-		let src=this.mergeArray(reader,depth););
+			return this.parseIntArray(reader,depth);
 		}
 		if(line[0]===">F")
 		{
-			return this.parseFloatArray(
-		let src=this.mergeArray(reader,depth);
+			return this.parseFloatArray(reader,depth);
 		}
 		if(line[0]==="[]")
 		{
@@ -61,64 +59,64 @@ function DataReader()
 		{
 			return this.parseObject(reader,depth);
 		}
-		throw new error("Invalid data type on line "+reader.line+": \'"+line[0]+"\'";
-	}
+		throw new Error("Invalid data type on line "+reader.line+": '"+line[0]+"'");
+	};
 	this.mergeArray=function(reader,depth)
 	{
 		let e="";
 		let l=reader.line;
-		while(true);
+		while(true)
 		{
 			let d=reader.getDepth();
-			let line=reader.nextLine()
+			let line=reader.nextLine();
 			if(line===":E")
 			{
-				if(d!=depth.value)
+				if(d!==depth.value)
 				{
-					throw new error("end tag on line "+reader.line+" must match depth of start on line "+l+".";
+					throw new Error("end tag on line "+reader.line+" must match depth of start on line "+l+".");
 				}
 				break;
 			}
 			e=e+line;
 		}
 		return e;
-	}
+	};
 	this.parseIntArray=function(reader,depth)
 	{
 		let src=this.mergeArray(reader,depth);
 		let out=src.replace(" ","").replace("\n","").split(",");
-		for(let i=0;i<out.length;i++)
+		for(i=0;i<out.length;i++)
 		{
-			let s=out[i]
+			let s=out[i];
 			out[i]=parseInt(s);
 			if(isNaN(out[i]))
 			{
-				throw new error("Invalid number on line "+reader.line+": \'"+s+"\'";
+				throw new Error("Invalid number on line "+reader.line+": '"+s+"'");
 			}
 		}
 		return out;
-	}
+	};
 	this.parseFloatArray=function(reader,depth)
 	{
 		let src=this.mergeArray(reader,depth);
 		let out=src.replace(" ","").replace("\n","").split(",");
-		for(let i=0;i<out.length;i++)
+		for(i=0;i<out.length;i++)
 		{
-			let s=out[i]
+			let s=out[i];
 			out[i]=parseFloat(s);
 			if(isNaN(out[i]))
 			{
-				throw new error("Invalid number on line "+reader.line+": \'"+s+"\'";
+				throw new Error("Invalid number on line "+reader.line+": '"+s+"'");
 			}
 		}
 		return out;
-	}
+	};
 	this.parseArray=function(reader,depth)
 	{
-	}
+	};
 	this.parseObject=function(reader,depth)
 	{
-	}
+	};
 }
 function StringProcesser(txt)
 {
@@ -127,10 +125,10 @@ function StringProcesser(txt)
 	this.line=0;
 	this.next=function()
 	{
-		let c=str[pos];
+		let c=this.str[this.pos];
 		if(c==="\n")
 		{
-			line++;
+			this.line++;
 		}
 		this.pos=this.pos+1;
 		return c;
@@ -145,7 +143,7 @@ function StringProcesser(txt)
 			char=this.next();
 		}
 		return line;
-	}
+	};
 	this.getDepth=function()
 	{
 		let i=0;
@@ -157,7 +155,7 @@ function StringProcesser(txt)
 		}
 		this.pos=this.pos-1;
 		return i;
-	}
+	};
 }
 function PassableReference(item)
 {
