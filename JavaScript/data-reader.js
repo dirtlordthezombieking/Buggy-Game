@@ -6,13 +6,16 @@ function DataReader()
 		{
 			try
 			{
-				let read=new StringProcesser(str);
-				let line=read.nextLine();
+				let readear=new StringProcesser(str);
+				let line=reader.nextLine();
+				let depth=new PassableReference(0)
 				if(line===":::{}:::")
 				{
+					this.parseObject(reader,depth);
 				}
 				else if(line===":::[]:::")
 				{
+					this.parseArray(reader,depth);
 				}
 				else
 				{
@@ -25,7 +28,7 @@ function DataReader()
 			}
 		});
 	}
-	this.parseElement=function(reader)
+	this.parseElement=function(reader,depth)
 	{
 		let line=reader.nextLine().split":";
 		if(line[0]==="S")
@@ -42,42 +45,69 @@ function DataReader()
 		}
 		if(line[0]===">I")
 		{
-			return this parseIntArray(reader);
+			return this parseIntArray(
+		let src=this.mergeArray(reader,depth););
 		}
 		if(line[0]===">F")
 		{
-			return this.parseFloatArray(reader);
+			return this.parseFloatArray(
+		let src=this.mergeArray(reader,depth);
 		}
 		if(line[0]==="[]")
 		{
-			//return line[1];
+			return this.parseArray(reader,depth);
 		}
 		if(line[0]==="{}")
 		{
-			//return line[1];
+			return this.parseObject(reader,depth);
 		}
 		throw new error("Invalid data type: \'"+
 	}
-	this.parseIntArray=function(src)
+	this.mergeArray=function(reader,depth)
 	{
+		let e="";
+		while(true);
+		{
+			let d=reader.getDepth();
+			let
+		}
+	}
+	this.parseIntArray=function(reader,depth)
+	{
+		let src=this.mergeArray(reader,depth);
 		let out=src.replace(" ","").replace("\n","").split(",");
 		for(let i=0;i<out.length;i++)
 		{
-			out[i]=parseInt(out[i]);
+			let s=out[i]
+			out[i]=parseInt(s);
+			if(isNaN(out[i]))
+			{
+				throw new error(""nvalid number on line "+reader.line+": \'"+s+"\'"
+			}
 		}
 		return out;
 	}
-	this.parseFloatArray=function(src)
+	this.parseFloatArray=function(reader,depth)
 	{
+		let src=this.mergeArray(reader,depth);
 		let out=src.replace(" ","").replace("\n","").split(",");
 		for(let i=0;i<out.length;i++)
 		{
-			out[i]=parseFloat(out[i]);
+			let s=out[i]
+			out[i]=parseFloat(s);
+			if(isNaN(out[i]))
+			{
+				throw new error(""nvalid number on line "+reader.line+": \'"+s+"\'"
+			}
 		}
 		return out;
 	}
-	this.parseArray=function()
-	{}
+	this.parseArray=function(reader,depth)
+	{
+	}
+	this.parseObject=function(reader,depth)
+	{
+	}
 }
 function StringProcesser(txt)
 {
@@ -117,4 +147,8 @@ function StringProcesser(txt)
 		this.pos=this.pos-1;
 		return i;
 	}
+}
+function PassableReference(item)
+{
+	this.value=item;
 }
