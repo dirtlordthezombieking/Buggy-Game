@@ -19,12 +19,12 @@ function DataReader()
 				}
 				else
 				{
-					throw new error("Invalid data entry type: \'"+line+"\'.");
+					throw new error("Invalid data entry type: '"+line+"'.");
 				}
 			}
 			catch(e)
 			{
-				log message(e.message);
+				logMessage(e.message);
 			}
 		});
 	}
@@ -61,7 +61,7 @@ function DataReader()
 		{
 			return this.parseObject(reader,depth);
 		}
-		throw new error("Invalid data type on line "+reader.line+": \'"+line[0]+"\'";
+		throw new error("Invalid data type on line "+reader.line+": '"+line[0]+"'";
 	}
 	this.mergeArray=function(reader,depth)
 	{
@@ -93,7 +93,7 @@ function DataReader()
 			out[i]=parseInt(s);
 			if(isNaN(out[i]))
 			{
-				throw new error("Invalid number on line "+reader.line+": \'"+s+"\'";
+				throw new error("Invalid number on line "+reader.line+": '"+s+"'";
 			}
 		}
 		return out;
