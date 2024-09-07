@@ -82,7 +82,7 @@ function DataReader()
 			out[i]=parseInt(s);
 			if(isNaN(out[i]))
 			{
-				throw new error(""nvalid number on line "+reader.line+": \'"+s+"\'"
+				throw new error("nvalid number on line "+reader.line+": \'"+s+"\'";
 			}
 		}
 		return out;
@@ -97,7 +97,7 @@ function DataReader()
 			out[i]=parseFloat(s);
 			if(isNaN(out[i]))
 			{
-				throw new error(""nvalid number on line "+reader.line+": \'"+s+"\'"
+				throw new error("nvalid number on line "+reader.line+": \'"+s+"\'";
 			}
 		}
 		return out;
