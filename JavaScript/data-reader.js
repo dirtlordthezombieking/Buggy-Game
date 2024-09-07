@@ -61,7 +61,7 @@ function DataReader()
 		{
 			return this.parseObject(reader,depth);
 		}
-		throw new error("Invalid data type: \'"+
+		throw new error("Invalid data type on line "+reader.line+": \'"+line[0]+"\'";
 	}
 	this.mergeArray=function(reader,depth)
 	{
@@ -69,7 +69,8 @@ function DataReader()
 		while(true);
 		{
 			let d=reader.getDepth();
-			let
+			let line=reader.nextLine()
+			if(line===":E
 		}
 	}
 	this.parseIntArray=function(reader,depth)
