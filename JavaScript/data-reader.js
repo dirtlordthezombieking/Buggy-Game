@@ -61,16 +61,27 @@ function DataReader()
 		{
 			return this.parseObject(reader,depth);
 		}
-		throw new error("Invalid data type: \'"+
+		throw new error("Invalid data type on line "+reader.line+": \'"+line[0]+"\'";
 	}
 	this.mergeArray=function(reader,depth)
 	{
 		let e="";
+		let l=reader.line;
 		while(true);
 		{
 			let d=reader.getDepth();
-			let
+			let line=reader.nextLine()
+			if(line===":E")
+			{
+				if(d!=depth.value)
+				{
+					throw new error("end tag on line "+reader.line+" must match depth of start on line "+l+".";
+				}
+				break;
+			}
+			e=e+line;
 		}
+		return e;
 	}
 	this.parseIntArray=function(reader,depth)
 	{
@@ -82,7 +93,7 @@ function DataReader()
 			out[i]=parseInt(s);
 			if(isNaN(out[i]))
 			{
-				throw new error(""nvalid number on line "+reader.line+": \'"+s+"\'"
+				throw new error("Invalid number on line "+reader.line+": \'"+s+"\'";
 			}
 		}
 		return out;
@@ -97,7 +108,7 @@ function DataReader()
 			out[i]=parseFloat(s);
 			if(isNaN(out[i]))
 			{
-				throw new error(""nvalid number on line "+reader.line+": \'"+s+"\'"
+				throw new error("Invalid number on line "+reader.line+": \'"+s+"\'";
 			}
 		}
 		return out;
