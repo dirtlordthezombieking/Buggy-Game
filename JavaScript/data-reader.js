@@ -143,7 +143,7 @@ function DataReader()
 		}
 		return ret;
 	};
-	this.getName=function(Reader)
+	this.getName=function(reader)
 	{
 		return reader.until(":");
 	};
