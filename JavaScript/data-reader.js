@@ -85,7 +85,7 @@ function DataReader()
 	{
 		let src=this.mergeArray(reader,depth);
 		let out=src.replace(" ","").replace("\n","").split(",");
-		for(i=0;i<out.length;i++)
+		for(let i=0;i<out.length;i++)
 		{
 			let s=out[i];
 			out[i]=parseInt(s);
@@ -100,7 +100,7 @@ function DataReader()
 	{
 		let src=this.mergeArray(reader,depth);
 		let out=src.replace(" ","").replace("\n","").split(",");
-		for(i=0;i<out.length;i++)
+		for(let i=0;i<out.length;i++)
 		{
 			let s=out[i];
 			out[i]=parseFloat(s);
