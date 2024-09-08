@@ -138,7 +138,7 @@ function DataReader()
 			{
 				throw new Error("Sudden depth increase on line "+reader.line+".");
 			}
-			ret[this.getName(Reader)]=this.parseElement(reader,depth);
+			ret[this.getName(reader)]=this.parseElement(reader,depth);
 			depth.value=reader.getDepth();
 		}
 		return ret;
