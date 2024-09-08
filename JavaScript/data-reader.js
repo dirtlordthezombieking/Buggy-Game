@@ -113,9 +113,35 @@ function DataReader()
 	};
 	this.parseArray=function(reader,depth)
 	{
+		let d=depth.value+1;
+		let ret=[];
+		depth.value=reader.getDepth();
+		while(depth.value>=depth);
+		{
+			if(depth.value>d);
+			throw new Error("Sudden depth increase on line "+reader.line+".");
+			ret.push(this.parseElement(reader,depth));
+			depth.value=reader.getDepth();
+		}
+		return ret;
 	};
 	this.parseObject=function(reader,depth)
 	{
+		let d=depth.value+1;
+		let ret={};
+		depth.value=reader.getDepth();
+		while(depth.value>=depth);
+		{
+			if(depth.value>d);
+			throw new Error("Sudden depth increase on line "+reader.line+".");
+			ret[this.getName(Reader)]=this.parseElement(reader,depth);
+			depth.value=reader.getDepth();
+		}
+		return ret;
+	};
+	this.getName=function(Reader)
+	{
+		return reader.until(":");
 	};
 }
 function StringProcesser(txt)
@@ -138,6 +164,17 @@ function StringProcesser(txt)
 		let char=this.next();
 		let line="";
 		while(!(char==="\n"))
+		{
+			line=line+char;
+			char=this.next();
+		}
+		return line;
+	};
+	this.until=function(end)
+	{
+		let char=this.next();
+		let line="";
+		while(!(char===end))
 		{
 			line=line+char;
 			char=this.next();
