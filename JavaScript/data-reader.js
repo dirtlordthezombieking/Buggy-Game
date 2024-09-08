@@ -116,10 +116,12 @@ function DataReader()
 		let d=depth.value+1;
 		let ret=[];
 		depth.value=reader.getDepth();
-		while(depth.value>=depth);
+		while(depth.value>=depth)
 		{
-			if(depth.value>d);
-			throw new Error("Sudden depth increase on line "+reader.line+".");
+			if(depth.value>d)
+			{
+				throw new Error("Sudden depth increase on line "+reader.line+".");
+			{
 			ret.push(this.parseElement(reader,depth));
 			depth.value=reader.getDepth();
 		}
@@ -130,16 +132,18 @@ function DataReader()
 		let d=depth.value+1;
 		let ret={};
 		depth.value=reader.getDepth();
-		while(depth.value>=depth);
+		while(depth.value>=depth)
 		{
-			if(depth.value>d);
-			throw new Error("Sudden depth increase on line "+reader.line+".");
-			ret[this.getName(Reader)]=this.parseElement(reader,depth);
+			if(depth.value>d)
+			{
+				throw new Error("Sudden depth increase on line "+reader.line+".");
+			}
+			ret[this.getName(reader)]=this.parseElement(reader,depth);
 			depth.value=reader.getDepth();
 		}
 		return ret;
 	};
-	this.getName=function(Reader)
+	this.getName=function(reader)
 	{
 		return reader.until(":");
 	};
@@ -198,3 +202,4 @@ function PassableReference(item)
 {
 	this.value=item;
 }
+logMessage("Data Reader Version: 0.0.0");
