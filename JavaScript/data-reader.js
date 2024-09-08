@@ -116,7 +116,7 @@ function DataReader()
 		let d=depth.value+1;
 		let ret=[];
 		depth.value=reader.getDepth();
-		while(depth.value>=depth);
+		while(depth.value>=depth)
 		{
 			if(depth.value>d)
 			{
@@ -132,9 +132,9 @@ function DataReader()
 		let d=depth.value+1;
 		let ret={};
 		depth.value=reader.getDepth();
-		while(depth.value>=depth);
+		while(depth.value>=depth)
 		{
-			if(depth.value>d);
+			if(depth.value>d)
 			{
 				throw new Error("Sudden depth increase on line "+reader.line+".");
 			}
