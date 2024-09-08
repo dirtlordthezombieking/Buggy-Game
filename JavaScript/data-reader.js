@@ -202,3 +202,4 @@ function PassableReference(item)
 {
 	this.value=item;
 }
+logMessage("Data Reader Version: 0.0.0");
