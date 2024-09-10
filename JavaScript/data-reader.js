@@ -152,7 +152,7 @@ function DataReader()
 				throw new Error("Sudden depth increase from "+d+" to "+depth.value+" on line "+reader.line+": '"+reader.nextLine()+"'.");
 			}
 			let name=this.getName(reader);
-			logMessage(name);
+			//logMessage(name);
 			let val=this.parseElement(reader,depth);
 			if(depth.value===-10)
 			{
@@ -179,12 +179,12 @@ function StringProcesser(txt)
 		let c=this.str[this.pos];
 		if(c==="\n")
 		{
-			logMessage("line: "+this.line);
+			//logMessage("line: "+this.line);
 			this.line++;
-			if(this.line>300)
-			{
-				throw new Error("EOF passed")
-			}
+			//if(this.line>300)
+			//{
+				//throw new Error("EOF passed")
+			//}
 		}
 		this.pos=this.pos+1;
 		return c;
