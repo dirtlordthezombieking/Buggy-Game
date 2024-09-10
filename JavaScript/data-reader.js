@@ -2,6 +2,10 @@ logMessage("Data Reader start");
 function DataReader()
 {
 
+	this.getName=function(reader)
+	{
+		return reader.until(":");
+	};
 }
 logMessage("Data Reader string processer");
 function StringProcesser(txt)
