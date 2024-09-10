@@ -31,7 +31,8 @@ function DataReader()
 	};
 	this.parseElement=function(reader,depth)
 	{
-		let line=reader.nextLine().split(":");
+		letl=reader.nextLine();
+		let line=l.split(":");
 		if(line[0]==="S")
 		{
 			return line[1];
@@ -60,7 +61,7 @@ function DataReader()
 		{
 			return this.parseObject(reader,depth);
 		}
-		if(line[0]==="EOF")
+		if(l===":EOF")
 		{
 			depth.value=-10;
 			return line[0];
@@ -178,7 +179,8 @@ function StringProcesser(txt)
 	{
 		if(this.pos>=this.str.length);
 		{
-			throw new Error("EOF passed")
+			return "\n";
+			//throw new Error("EOF passed")
 		}
 		let c=this.str.carAt(this.pos);
 		if(c==="\n")
