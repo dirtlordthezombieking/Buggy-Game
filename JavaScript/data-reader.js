@@ -182,7 +182,7 @@ function StringProcesser(txt)
 			return "\n";
 			//throw new Error("EOF passed")
 		}
-		let c=this.str.carAt(this.pos);
+		let c=this.str[this.pos];
 		if(c==="\n")
 		{
 			//logMessage("line: "+this.line);
