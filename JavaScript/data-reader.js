@@ -126,7 +126,7 @@ function DataReader()
 		{
 			if(depth.value>d)
 			{
-				throw new Error("Sudden depth increase from "+d+" t "+depth.value+" on line "+reader.line+": '"+reader.nextLine()+"'.");
+				throw new Error("Sudden depth increase from "+d+" to "+depth.value+" on line "+reader.line+": '"+reader.nextLine()+"'.");
 			}
 			reader.next();
 			let val=this.parseElement(reader,depth);
@@ -137,6 +137,7 @@ function DataReader()
 			ret.push(val);
 			depth.value=reader.getDepth();
 		}
+		reader.pos-=depth.value;
 		return ret;
 	};
 	this.parseObject=function(reader,depth)
@@ -148,7 +149,7 @@ function DataReader()
 		{
 			if(depth.value>d)
 			{
-				throw new Error("Sudden depth increase from "+d+" t "+depth.value+" on line "+reader.line+": '"+reader.nextLine()+"'.");
+				throw new Error("Sudden depth increase from "+d+" to "+depth.value+" on line "+reader.line+": '"+reader.nextLine()+"'.");
 			}
 			let name=this.getName(reader);
 			let val=this.parseElement(reader,depth);
@@ -159,6 +160,7 @@ function DataReader()
 			ret[name]=val
 			depth.value=reader.getDepth();
 		}
+		reader.pos-=depth.value;
 		return ret;
 	};
 	this.getName=function(reader)
