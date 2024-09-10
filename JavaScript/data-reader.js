@@ -176,14 +176,19 @@ function StringProcesser(txt)
 	this.line=1;
 	this.next=function()
 	{
-		let c=this.str[this.pos];
+		if(this.pos>=this.str.length);
+		{
+			throw new Error("EOF passed")
+		}
+		let c=this.str.carAt(this.pos);
 		if(c==="\n")
 		{
 			//logMessage("line: "+this.line);
 			this.line++;
 			//if(this.line>300)
+			//if(
 			//{
-				//throw new Error("EOF passed")
+			//	throw new Error("EOF passed")
 			//}
 		}
 		this.pos=this.pos+1;
