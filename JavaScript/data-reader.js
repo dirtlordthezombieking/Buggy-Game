@@ -1,5 +1,6 @@
 logMessage("Data Reader start");
-
+function DataReader()
+{
 logMessage("Data Reader string processer");
 function StringProcesser(txt)
 {
