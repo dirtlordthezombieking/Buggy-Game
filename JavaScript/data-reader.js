@@ -1,7 +1,34 @@
 logMessage("Data Reader start");
 function DataReader()
 {
-
+	this.readData=async function(src)
+	{
+		await getTextData(src,function(str)
+		{
+			try
+			{
+				let reader=new StringProcesser(str);
+				let line=reader.nextLine();
+				let depth=new PassableReference(0);
+				if(line===":::{}:::")
+				{
+					this.parseObject(reader,depth);
+				}
+				else if(line===":::[]:::")
+				{
+					this.parseArray(reader,depth);
+				}
+				else
+				{
+					throw new Error("Invalid data entry type: '"+line+"'.");
+				}
+			}
+			catch(e)
+			{
+				logMessage(e.message);
+			}
+		});
+	};
 	this.parseElement=function(reader,depth)
 	{
 		let line=reader.nextLine().split(":");
