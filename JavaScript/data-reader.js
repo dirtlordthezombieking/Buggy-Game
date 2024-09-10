@@ -2,6 +2,22 @@ logMessage("Data Reader start");
 function DataReader()
 {
 
+	this.parseArray=function(reader,depth)
+	{
+		let d=depth.value+1;
+		let ret=[];
+		depth.value=reader.getDepth();
+		while(depth.value>=depth)
+		{
+			if(depth.value>d)
+			{
+				throw new Error("Sudden depth increase on line "+reader.line+".");
+			{
+			ret.push(this.parseElement(reader,depth));
+			depth.value=reader.getDepth();
+		}
+		return ret;
+	};
 	this.parseObject=function(reader,depth)
 	{
 		let d=depth.value+1;
