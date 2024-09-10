@@ -117,7 +117,7 @@ function DataReader()
 		let d=depth.value+1;
 		let ret=[];
 		depth.value=reader.getDepth();
-		while(depth.value>=depth)
+		while(depth.value>=d)
 		{
 			if(depth.value>d)
 			{
@@ -133,7 +133,7 @@ function DataReader()
 		let d=depth.value+1;
 		let ret={};
 		depth.value=reader.getDepth();
-		while(depth.value>=depth)
+		while(depth.value>=d)
 		{
 			if(depth.value>d)
 			{
