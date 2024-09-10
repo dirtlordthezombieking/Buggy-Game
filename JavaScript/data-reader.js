@@ -1,7 +1,6 @@
-logMessage("Data Reader start");
 function DataReader()
 {
-	this.readData=async function(src)
+	this.readData=async function(src,self)
 	{
 		await getTextData(src,function(str)
 		{
@@ -12,12 +11,12 @@ function DataReader()
 				let depth=new PassableReference(0);
 				if(line===":::{}:::")
 				{
-					let t=this.parseObject(reader,depth);
+					let t=self.parseObject(reader,depth);
 					logMessage(JSON.stringify(t));
 				}
 				else if(line===":::[]:::")
 				{
-					this.parseArray(reader,depth);
+					self.parseArray(reader,depth);
 				}
 				else
 				{
@@ -150,7 +149,6 @@ function DataReader()
 		return reader.until(":");
 	};
 }
-logMessage("Data Reader string processer");
 function StringProcesser(txt)
 {
 	this.str=txt;
@@ -201,7 +199,6 @@ function StringProcesser(txt)
 		return i;
 	};
 }
-logMessage("Data Reader passable reference");
 function PassableReference(item)
 {
 	this.value=item;
