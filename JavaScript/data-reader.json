@@ -1,5 +1,3 @@
-function DataReader()
-{
 	this.readData=async function(src)
 	{
 		await getTextData(src,function(str)
