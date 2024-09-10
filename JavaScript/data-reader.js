@@ -178,8 +178,12 @@ function StringProcesser(txt)
 		let c=this.str[this.pos];
 		if(c==="\n")
 		{
-			logMessage("line"+line);
+			logMessage("line: "+this.line);
 			this.line++;
+			if(this.line>300)
+			{
+				throw new Error("EOF passed")
+			}
 		}
 		this.pos=this.pos+1;
 		return c;
