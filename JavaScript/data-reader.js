@@ -60,6 +60,11 @@ function DataReader()
 		{
 			return this.parseObject(reader,depth);
 		}
+		if(line[0]==="EOF")
+		{
+			depth.value=-10;
+			return line[0];
+		}
 		throw new Error("Invalid data type on line "+reader.line+": '"+line[0]+"'");
 	};
 	this.mergeArray=function(reader,depth)
@@ -123,7 +128,12 @@ function DataReader()
 			{
 				throw new Error("Sudden depth increase on line "+reader.line+".");
 			}
-			ret.push(this.parseElement(reader,depth));
+			let val=this.parseElement(reader,depth);
+			if(depth.value===-10)
+			{
+				break;
+			}
+			ret.push(val);
 			depth.value=reader.getDepth();
 		}
 		return ret;
@@ -139,7 +149,12 @@ function DataReader()
 			{
 				throw new Error("Sudden depth increase on line "+reader.line+".");
 			}
-			ret[this.getName(reader)]=this.parseElement(reader,depth);
+			let val=this.parseElement(reader,depth);
+			if(depth.value===-10)
+			{
+				break;
+			}
+			ret[this.getName(reader)]=val
 			depth.value=reader.getDepth();
 		}
 		return ret;
