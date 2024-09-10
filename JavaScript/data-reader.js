@@ -178,6 +178,7 @@ function StringProcesser(txt)
 		let c=this.str[this.pos];
 		if(c==="\n")
 		{
+			logMessage("line"+line);
 			this.line++;
 		}
 		this.pos=this.pos+1;
