@@ -152,6 +152,7 @@ function DataReader()
 				throw new Error("Sudden depth increase from "+d+" to "+depth.value+" on line "+reader.line+": '"+reader.nextLine()+"'.");
 			}
 			let name=this.getName(reader);
+			logMessage(name);
 			let val=this.parseElement(reader,depth);
 			if(depth.value===-10)
 			{
