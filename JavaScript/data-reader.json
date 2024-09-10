@@ -141,7 +141,3 @@
 		}
 		return ret;
 	};
-	this.getName=function(reader)
-	{
-		return reader.until(":");
-	};
