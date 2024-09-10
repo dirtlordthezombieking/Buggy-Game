@@ -177,10 +177,10 @@ function StringProcesser(txt)
 	this.line=1;
 	this.next=function()
 	{
-		if(this.pos>=this.str.length);
+		if(this.pos>=this.str.length)
 		{
-			//return "\n";
-			throw new Error("EOF passed\n"+this.str+"\n"+this.str.length)
+			return "\n";
+			//throw new Error("EOF passed\n"+this.str+"\n"+this.str.length)
 		}
 		let c=this.str[this.pos];
 		if(c==="\n")
