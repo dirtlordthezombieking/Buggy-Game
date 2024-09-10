@@ -33,6 +33,8 @@
 				try
 				{
 					start();
+					let t=new DataReader().readData("models/test-cube.txt");
+					logMessage(JSON.stringify(t));
 				}
 				catch(e)
 				{
