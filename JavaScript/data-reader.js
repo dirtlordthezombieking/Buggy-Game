@@ -31,7 +31,7 @@ function DataReader()
 	};
 	this.parseElement=function(reader,depth)
 	{
-		letl=reader.nextLine();
+		let l=reader.nextLine();
 		let line=l.split(":");
 		if(line[0]==="S")
 		{
