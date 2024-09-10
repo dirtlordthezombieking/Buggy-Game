@@ -126,7 +126,7 @@ function DataReader()
 		{
 			if(depth.value>d)
 			{
-				throw new Error("Sudden depth increase on line "+reader.line+": '"+reader.nextLine()+"'.");
+				throw new Error("Sudden depth increase from "+d+" t "+depth.value+" on line "+reader.line+": '"+reader.nextLine()+"'.");
 			}
 			reader.next();
 			let val=this.parseElement(reader,depth);
@@ -148,7 +148,7 @@ function DataReader()
 		{
 			if(depth.value>d)
 			{
-				throw new Error("Sudden depth increase on line "+reader.line+": '"+reader.nextLine()+"'.");
+				throw new Error("Sudden depth increase from "+d+" t "+depth.value+" on line "+reader.line+": '"+reader.nextLine()+"'.");
 			}
 			let name=this.getName(reader);
 			let val=this.parseElement(reader,depth);
