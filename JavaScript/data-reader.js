@@ -12,7 +12,7 @@ function DataReader()
 			if(depth.value>d)
 			{
 				throw new Error("Sudden depth increase on line "+reader.line+".");
-			{
+			}
 			ret.push(this.parseElement(reader,depth));
 			depth.value=reader.getDepth();
 		}
