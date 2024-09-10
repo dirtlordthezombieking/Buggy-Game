@@ -128,6 +128,7 @@ function DataReader()
 			{
 				throw new Error("Sudden depth increase on line "+reader.line+".");
 			}
+			reader.next();
 			let val=this.parseElement(reader,depth);
 			if(depth.value===-10)
 			{
