@@ -12,7 +12,8 @@ function DataReader()
 				let depth=new PassableReference(0);
 				if(line===":::{}:::")
 				{
-					this.parseObject(reader,depth);
+					let t=this.parseObject(reader,depth);
+					logMessage(JSON.stringify(t));
 				}
 				else if(line===":::[]:::")
 				{
