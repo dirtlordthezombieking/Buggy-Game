@@ -168,7 +168,7 @@ function StringProcesser(txt)
 {
 	this.str=txt;
 	this.pos=0;
-	this.line=0;
+	this.line=1;
 	this.next=function()
 	{
 		let c=this.str[this.pos];
@@ -205,7 +205,7 @@ function StringProcesser(txt)
 	{
 		let i=0;
 		let char=this.next();
-		while(!(char==="\t"))
+		while(char==="\t")
 		{
 			char=this.next();
 			i=i+1;
