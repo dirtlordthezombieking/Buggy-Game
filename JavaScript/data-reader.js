@@ -2,6 +2,26 @@ logMessage("Data Reader start");
 function DataReader()
 {
 
+	this.mergeArray=function(reader,depth)
+	{
+		let e="";
+		let l=reader.line;
+		while(true)
+		{
+			let d=reader.getDepth();
+			let line=reader.nextLine();
+			if(line===":E")
+			{
+				if(d!==depth.value)
+				{
+					throw new Error("end tag on line "+reader.line+" must match depth of start on line "+l+".");
+				}
+				break;
+			}
+			e=e+line;
+		}
+		return e;
+	};
 	this.parseIntArray=function(reader,depth)
 	{
 		let src=this.mergeArray(reader,depth);
