@@ -149,12 +149,13 @@ function DataReader()
 			{
 				throw new Error("Sudden depth increase on line "+reader.line+".");
 			}
+			let name=this.getName(reader);
 			let val=this.parseElement(reader,depth);
 			if(depth.value===-10)
 			{
 				break;
 			}
-			ret[this.getName(reader)]=val
+			ret[name]=val
 			depth.value=reader.getDepth();
 		}
 		return ret;
