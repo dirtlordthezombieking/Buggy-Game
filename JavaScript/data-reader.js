@@ -61,7 +61,7 @@ function DataReader()
 		{
 			return this.parseObject(reader,depth);
 		}
-		if(l===":EOF")
+		if(l==="EOF")
 		{
 			depth.value=-10;
 			return line[0];
