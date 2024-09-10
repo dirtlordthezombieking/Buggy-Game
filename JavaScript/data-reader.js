@@ -2,6 +2,21 @@ logMessage("Data Reader start");
 function DataReader()
 {
 
+	this.parseIntArray=function(reader,depth)
+	{
+		let src=this.mergeArray(reader,depth);
+		let out=src.replace(" ","").replace("\n","").split(",");
+		for(let i=0;i<out.length;i++)
+		{
+			let s=out[i];
+			out[i]=parseInt(s);
+			if(isNaN(out[i]))
+			{
+				throw new Error("Invalid number on line "+reader.line+": '"+s+"'");
+			}
+		}
+		return out;
+	};
 	this.parseFloatArray=function(reader,depth)
 	{
 		let src=this.mergeArray(reader,depth);
