@@ -59,23 +59,3 @@
 		}
 		throw new Error("Invalid data type on line "+reader.line+": '"+line[0]+"'");
 	};
-	this.mergeArray=function(reader,depth)
-	{
-		let e="";
-		let l=reader.line;
-		while(true)
-		{
-			let d=reader.getDepth();
-			let line=reader.nextLine();
-			if(line===":E")
-			{
-				if(d!==depth.value)
-				{
-					throw new Error("end tag on line "+reader.line+" must match depth of start on line "+l+".");
-				}
-				break;
-			}
-			e=e+line;
-		}
-		return e;
-	};
