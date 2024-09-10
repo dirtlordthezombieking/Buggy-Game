@@ -179,8 +179,8 @@ function StringProcesser(txt)
 	{
 		if(this.pos>=this.str.length);
 		{
-			return "\n";
-			//throw new Error("EOF passed")
+			//return "\n";
+			throw new Error("EOF passed\n"+this.str+"\n"+this.str.length)
 		}
 		let c=this.str[this.pos];
 		if(c==="\n")
