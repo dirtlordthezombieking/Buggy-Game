@@ -1,4 +1,3 @@
-logMessage("Data Reader start");
 function DataReader()
 {
 	this.readData=async function(src,self)
@@ -150,7 +149,6 @@ function DataReader()
 		return reader.until(":");
 	};
 }
-logMessage("Data Reader string processer");
 function StringProcesser(txt)
 {
 	this.str=txt;
@@ -201,7 +199,6 @@ function StringProcesser(txt)
 		return i;
 	};
 }
-logMessage("Data Reader passable reference");
 function PassableReference(item)
 {
 	this.value=item;
