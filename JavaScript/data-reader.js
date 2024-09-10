@@ -1,6 +1,6 @@
 function DataReader()
 {
-	this.readData=async function(src,self)
+	this.readData=async function(src,passSelf)
 	{
 		await getTextData(src,function(str)
 		{
@@ -11,12 +11,12 @@ function DataReader()
 				let depth=new PassableReference(0);
 				if(line===":::{}:::")
 				{
-					let t=self.parseObject(reader,depth);
+					let t=apassSelf.parseObject(reader,depth);
 					logMessage(JSON.stringify(t));
 				}
 				else if(line===":::[]:::")
 				{
-					self.parseArray(reader,depth);
+					passSelf.parseArray(reader,depth);
 				}
 				else
 				{
