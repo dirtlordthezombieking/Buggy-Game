@@ -2,6 +2,39 @@ logMessage("Data Reader start");
 function DataReader()
 {
 
+	this.parseElement=function(reader,depth)
+	{
+		let line=reader.nextLine().split(":");
+		if(line[0]==="S")
+		{
+			return line[1];
+		}
+		if(line[0]==="I")
+		{
+			return parseInt(line[1]);
+		}
+		if(line[0]==="F")
+		{
+			return parseFloat(line[1]);
+		}
+		if(line[0]===">I")
+		{
+			return this.parseIntArray(reader,depth);
+		}
+		if(line[0]===">F")
+		{
+			return this.parseFloatArray(reader,depth);
+		}
+		if(line[0]==="[]")
+		{
+			return this.parseArray(reader,depth);
+		}
+		if(line[0]==="{}")
+		{
+			return this.parseObject(reader,depth);
+		}
+		throw new Error("Invalid data type on line "+reader.line+": '"+line[0]+"'");
+	};
 	this.mergeArray=function(reader,depth)
 	{
 		let e="";
