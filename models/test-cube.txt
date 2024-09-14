@@ -2,12 +2,31 @@
 MESH:[]:
 	:{}:
 		NAME:S:CUBE
-		ATTR:[]:
-			:{}:
+		ATTR:{}:
+			NAME:[]:
+				:S:a_pos
+				:S:a_normal
+				:S:a_colour
+				:S:a_texCoord
+				:S:a_bone_1
+				:S:a_bone_2
+				:S:a_bone_3
+			USE:{}:
+				a_pos:B:true
+				a_normal:B:true
+				a_colour:B:true
+				a_texCoord:B:true
+				a_bone_1:B:false
+				a_bone_2:B:false
+				a_bone_3:B:false
+			SIZE:{}:
 				a_pos:I:3
 				a_normal:I:3
 				a_colour:I:4
 				a_texCoord:I:2
+				a_bone_1:I:2
+				a_bone_2:I:2
+				a_bone_3:I:2
 		BONES:I:3
 		VERT:[]:
 			:>F:
