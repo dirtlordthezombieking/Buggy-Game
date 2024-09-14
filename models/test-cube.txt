@@ -104,10 +104,13 @@ MESH:[]:
 28,12,14,
 29,15,17
 		:E
-UNIF:{}:
-	u_colour:>F:
+UNIF:[]:
+	{}:
+		NAME:S:u_colour
+		SIZE:I:4
+		VAL:>F:
 1.00000,1.00000,1.00000,1.00000
-	:E
+		:E
 SKELL:[]:
 	:{}:
 		NAME:S:skeleton
@@ -216,6 +219,7 @@ STRUC:[]:
 		:E
 		USE:>I:
 2,6,7
+		USEID:S:bone_
 		:E
 		SUB:[]:
 			:{}:
