@@ -14,3 +14,8 @@ function RawAttribute()
 	{
 	};
 }
+function Mesh(glCore,shaderProgram,src)
+{
+	this.gl=glCore;
+	this program=shaderProgram;
+}
